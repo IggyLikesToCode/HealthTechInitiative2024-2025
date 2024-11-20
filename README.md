@@ -1,2 +1,2 @@
-# HealthTechInitiative2024-2025
-Lead Contamination
+# Health Tech Initiative (2024-2025)
+Theme: Lead Contamination
