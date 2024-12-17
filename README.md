@@ -28,6 +28,7 @@ Step 2:
 Now that you have the repository open locally, open the terminal with (CTRL+`) or under Terminals>New Terminal. In this terminal, type the following:
 
 npm install
+
 npm start
 
 You should see the project running locally in your browser under LocalHost:3000! Congrats -- great job!
