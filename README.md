@@ -27,6 +27,8 @@ After downloading, unpack the zip, right click the folder, and under more option
 Step 2:
 Now that you have the repository open locally, open the terminal with (CTRL+`) or under Terminals>New Terminal. In this terminal, type the following:
 
+cd ./hti24-25
+
 npm install
 
 npm start
