@@ -22,7 +22,7 @@ Github -
 
 Step 1:
 Clone the repository and open it in VSCode.
-After downloading, unpack the zip, right click the folder, and under more options click “Open in Visual Studio Code”. (or your preferred 
+After downloading, unpack the zip, right click the folder, and under more options click “Open in Visual Studio Code”. (or your preferred IDE)
 
 Step 2:
 Now that you have the repository open locally, open the terminal with (CTRL+`) or under Terminals>New Terminal. In this terminal, type the following:
