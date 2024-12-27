@@ -13,33 +13,33 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Router>
-      <div className="app-container">
-        <div
-          className={`reveal-navbar ${isOpen ? "open" : ""}`}
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseLeave={() => setIsOpen(false)}
-        >
-          <div className="navbar-button">&#9776;</div>
-          {isOpen && (
-            <ul className="navbar-links">
-              <li>
-                <Link to="/" className="nav-link">Home</Link>
-              </li>
-              <li>
-                <Link to="/map" className="nav-link">Map</Link>
-              </li>
-            </ul>
-          )}
+      <Router>
+        <div className="app-container">
+          <div
+              className={`reveal-navbar ${isOpen ? "open" : ""}`}
+              onMouseEnter={() => setIsOpen(true)}
+              onMouseLeave={() => setIsOpen(false)}
+          >
+            <div className="navbar-button">&#9776;</div>
+            {isOpen && (
+                <ul className="navbar-links">
+                  <li>
+                    <Link to="/" className="nav-link">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/map" className="nav-link">Map</Link>
+                  </li>
+                </ul>
+            )}
+          </div>
+          <div className={`content ${isOpen ? "shift-left" : ""}`}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/map" element={<Map />} />
+            </Routes>
+          </div>
         </div>
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/map" element={<Map />} />
-          </Routes>
-        </div>
-      </div>
-    </Router>
+      </Router>
   );
 };
 

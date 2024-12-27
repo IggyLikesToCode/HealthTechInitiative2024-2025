@@ -1,0 +1,20 @@
+.map-container {
+    z-index:0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 100vh;          /* Full viewport height */
+    width: 100vw;           /* Full viewport width */
+    background-color: #f0f0f0; /* Optional: Light gray background */
+}
+
+/* Map styling */
+#map {
+    z-index:0;
+
+    height: 85%;    /* Map height: 90% of the parent container */
+    width: 80%;     /* Map width: 90% of the parent container */
+    border: 1px solid black; /* Optional: Black border for the map */
+    border-radius: 10px;     /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+}

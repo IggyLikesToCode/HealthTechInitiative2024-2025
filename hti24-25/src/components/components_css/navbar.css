@@ -1,5 +1,6 @@
 /* General styling */
 body, html {
+    z-index:1;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -16,7 +17,8 @@ body, html {
   
   /* Reveal navbar styling */
   .reveal-navbar {
-    position: fixed;
+    position: fixed; /* Ensures the navbar stays on top */
+    z-index: 10;
     top: 0;
     right: 0;
     width: 4rem; /* Default collapsed width */
