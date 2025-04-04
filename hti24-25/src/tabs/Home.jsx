@@ -63,7 +63,7 @@ const Home = () => {
       </Container>
 
       <Container
-        disableGutters={true}
+        disableGutters
         maxWidth={false}
         sx={{
           display: "flex",
@@ -72,15 +72,45 @@ const Home = () => {
         }}
       >
         <Box
-          disableGutters
           sx={{
             width: "95%",
-            height: "400px",
+            height: "auto",
             backgroundColor: "#dbeafe",
             borderRadius: "20px",
-            alignSelf: "flex-start",
+            p: 4,
           }}
-        ></Box>
+        >
+          <Grid container spacing={4} justifyContent="space-around">
+            <Grid item xs={12} sm={4} textAlign="center">
+              {/*<PeopleIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <Typography variant="h4" fontWeight="bold" color="primary">
+                2.3M+
+              </Typography>
+              <Typography variant="subtitle1" color="primary">
+                People Affected
+              </Typography>
+            </Grid>
+
+            <Grid item xs={12} sm={4} textAlign="center">
+              {/*<MapIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <Typography variant="h4" fontWeight="bold" color="primary">
+                1,250+
+              </Typography>
+              <Typography variant="subtitle1" color="primary">
+                Cities Reported
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={4} textAlign="center">
+              {/*<WarningIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <Typography variant="h4" fontWeight="bold" color="primary">
+                780
+              </Typography>
+              <Typography variant="subtitle1" color="primary">
+                Active Warnings
+              </Typography>
+            </Grid>
+          </Grid>
+        </Box>
       </Container>
 
       {/* Footer */}
