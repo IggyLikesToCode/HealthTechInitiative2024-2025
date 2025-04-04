@@ -16,6 +16,15 @@ db.query('SELECT 1')
         console.error('❌ Failed to connect to the database:', err.message);
     });
 
+app.get("/api/get-map-levels", async (req, res) => {
+    try {
+        const [rows] = await db.execute("SELECT latitude, longitude, level FROM data_for_lead_old");
+        res.json(rows);
+    } catch (err) {
+        console.error("Error querying data:", err.message);
+        res.status(500).json({ error: "Error retrieving data" });
+    }
+});
 
 app.post("/api/report-lead", async (req, res) => {
     const {
