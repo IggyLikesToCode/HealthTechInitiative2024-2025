@@ -1,5 +1,7 @@
 import { AppBar, Toolbar, Typography, Breadcrumbs, Link } from "@mui/material";
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
+
 
 const Navbar = () => {
   return (
@@ -20,14 +22,14 @@ const Navbar = () => {
           <Link
             underline="hover"
             color="inherit"
-            href="/material-ui/getting-started/installation/"
+            href="/map"
           >
             Data
           </Link>
           <Link
             underline="hover"
             color="inherit"
-            href="/material-ui/getting-started/installation/"
+            href="/report"
           >
             Report
           </Link>
