@@ -9,8 +9,8 @@ import {
   Card,
   CardContent,
   Box,
-  Breadcrumbs
-  , Link
+  Breadcrumbs,
+  Link,
 } from "@mui/material";
 
 const Home = () => {
@@ -62,37 +62,25 @@ const Home = () => {
         </Box>
       </Container>
 
-      {/* Info Cards Section */}
-      <Container sx={{ py: 5 }}>
-        <Grid container spacing={4} justifyContent="center">
-          {[
-            {
-              title: "Report Issues",
-              text: "Submit contamination reports easily with our streamlined process.",
-            },
-            {
-              title: "View Data",
-              text: "Explore real-time contamination data across the country.",
-            },
-            {
-              title: "Take Action",
-              text: "Find resources on how to protect your community.",
-            },
-          ].map((item, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card sx={{ textAlign: "center", p: 2 }}>
-                <CardContent>
-                  <Typography variant="h5" fontWeight="bold">
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body1" color="textSecondary">
-                    {item.text}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+      <Container
+        disableGutters={true}
+        maxWidth={false}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "50px",
+        }}
+      >
+        <Box
+          disableGutters
+          sx={{
+            width: "95%",
+            height: "400px",
+            backgroundColor: "#dbeafe",
+            borderRadius: "20px",
+            alignSelf: "flex-start",
+          }}
+        ></Box>
       </Container>
 
       {/* Footer */}
