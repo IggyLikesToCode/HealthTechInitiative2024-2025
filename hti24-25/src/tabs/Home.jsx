@@ -12,12 +12,15 @@ import {
   Breadcrumbs,
   Link,
 } from "@mui/material";
+import {
+  UserOutlined as User,
+  WarningOutlined as Warning,
+  HomeOutlined as City,
+} from "@ant-design/icons";
 
 const Home = () => {
-  //use routes for redirecting
   return (
     <div>
-      {/* Hero Section */}
       <Container
         sx={{
           display: "flex",
@@ -26,7 +29,6 @@ const Home = () => {
           py: 10,
         }}
       >
-        {/* Left Side - Text */}
         <Box sx={{ width: "50%" }}>
           <Typography variant="h3" fontWeight="bold" gutterBottom>
             Tracking Lead Contamination, Protecting Communities
@@ -55,7 +57,6 @@ const Home = () => {
             justifyContent: "center",
           }}
         >
-          {/* Replace with an actual image */}
           <Typography variant="h5" color="primary">
             [Graphic Placeholder]
           </Typography>
@@ -82,7 +83,7 @@ const Home = () => {
         >
           <Grid container spacing={4} justifyContent="space-around">
             <Grid item xs={12} sm={4} textAlign="center">
-              {/*<PeopleIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <User style={{ color: "#6daff9", fontSize: 50 }} />
               <Typography variant="h4" fontWeight="bold" color="primary">
                 2.3M+
               </Typography>
@@ -92,7 +93,7 @@ const Home = () => {
             </Grid>
 
             <Grid item xs={12} sm={4} textAlign="center">
-              {/*<MapIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <City style={{ color: "#6daff9", fontSize: 50 }} />
               <Typography variant="h4" fontWeight="bold" color="primary">
                 1,250+
               </Typography>
@@ -101,7 +102,7 @@ const Home = () => {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4} textAlign="center">
-              {/*<WarningIcon sx={{ fontSize: 50, color: "#1d4ed8" }} />*/}
+              <Warning style={{ color: "#6daff9", fontSize: 50 }} />
               <Typography variant="h4" fontWeight="bold" color="primary">
                 780
               </Typography>
@@ -113,7 +114,6 @@ const Home = () => {
         </Box>
       </Container>
 
-      {/* Footer */}
       <footer
         style={{
           textAlign: "center",
