@@ -25,10 +25,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "react-scripts start",
+    "server": "node server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -50,10 +49,5 @@
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
-  },
-  "scripts": {
-    "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "react-scripts start",
-    "server": "node server.js"
   }
 }
