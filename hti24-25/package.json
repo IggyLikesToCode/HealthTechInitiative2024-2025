@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run server\"",
-    "client": "react-scripts start",
+    "client": "HOST=0.0.0.0 PORT=3000 react-scripts start",
     "server": "node server.js"
   },
   "eslintConfig": {
