@@ -26,6 +26,18 @@ app.get("/api/get-map-levels", async (req, res) => {
     }
 });
 
+app.get("/api/get-open-source-data", async (req, res) => {
+    try {
+        const [rows] = await db.execute(
+            "SELECT latitude, longitude, level FROM data_for_lead_new_crowdsourced"
+        );
+        res.json(rows);
+    } catch (err) {
+        console.error("Error fetching open-source data:", err.message);
+        res.status(500).json({ error: "Failed to fetch open-source data." });
+    }
+});
+
 app.post("/api/report-lead", async (req, res) => {
     const {
         location_name,
