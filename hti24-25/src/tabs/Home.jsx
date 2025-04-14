@@ -11,6 +11,7 @@ import {
   Box,
   Breadcrumbs,
   Link,
+  Avatar,
 } from "@mui/material";
 import {
   UserOutlined as User,
@@ -44,6 +45,13 @@ const Home = () => {
           >
             Report Contamination
           </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            sx={{ color: "black", mt: 2, ml: 2 }}
+          >
+            View Data
+          </Button>
         </Box>
 
         <Box
@@ -69,7 +77,7 @@ const Home = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "50px",
+          mb: 1,
         }}
       >
         <Box
@@ -113,6 +121,111 @@ const Home = () => {
           </Grid>
         </Box>
       </Container>
+
+      {/* --- OUR MISSION --- */}
+
+      <Container sx={{ alignItems: "center", width: "100%", mr: 6 }}>
+        <Grid
+          container
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{
+            py: 10,
+            px: 4,
+            borderRadius: "32px",
+            width: "90%",
+          }}
+        >
+          <Grid item md={6}>
+            <Box
+              sx={{
+                height: 280,
+                background: "#dbeafe",
+                borderRadius: "20px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1.2rem",
+                color: "#6daff9",
+                fontWeight: 600,
+                width: "300px",
+                height: "300px",
+              }}
+            >
+              <Typography>[Graphic]</Typography>
+            </Box>
+          </Grid>
+
+          {/* TEXT RIGHT */}
+          <Grid item xs={12} md={6}>
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color="textPrimary"
+              gutterBottom
+            >
+              Our Mission
+            </Typography>
+            <Typography
+              variant="h6"
+              color="text.secondary"
+              sx={{ maxWidth: "600px", mb: 2 }}
+            >
+              Empowering every community with data to uncover and eliminate lead
+              exposure risks.
+            </Typography>
+            <Typography
+              variant="body1"
+              color="text.secondary"
+              sx={{ maxWidth: "600px" }}
+            >
+              We believe no child should grow up drinking contaminated water.
+              Our mission is to build the most comprehensive, accessible, and
+              transparent platform for lead reporting in the United States.
+            </Typography>
+          </Grid>
+        </Grid>
+      </Container>
+
+      {/* --- OUR PARTNERS --- */}
+      <Box sx={{ mt: 4, ml: 10 }}>
+        <Typography variant="h3" fontWeight="bold" color="textPrimary" mb={2}>
+          Our Partners
+        </Typography>
+        <Typography variant="h6" color="text.secondary" mb={4}>
+          Collaborating with trusted organizations across public health,
+          education, and tech.
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            gap: 5,
+            overflowX: "auto",
+            pb: 2,
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          <Avatar
+            alt="Partner 1"
+            sx={{ bgcolor: "primary", width: 80, height: 80 }}
+          >
+            <User></User>
+          </Avatar>
+          <Avatar
+            alt="Partner 1"
+            sx={{ bgcolor: "#6daff9", width: 80, height: 80 }}
+          >
+            <User></User>
+          </Avatar>
+          <Avatar
+            alt="Partner 1"
+            sx={{ bgcolor: "primary", width: 80, height: 80 }}
+          >
+            <User></User>
+          </Avatar>
+        </Box>
+      </Box>
 
       <footer
         style={{

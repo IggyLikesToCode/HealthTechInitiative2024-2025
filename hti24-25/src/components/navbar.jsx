@@ -4,7 +4,12 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <AppBar position="static" color="background" elevation={0}>
+    <AppBar
+      position="static"
+      color="background"
+      elevation={0}
+      sx={{ borderBottomLeftRadius: 5, borderBottomRightRadius: 5 }}
+    >
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Health Tech Initiative

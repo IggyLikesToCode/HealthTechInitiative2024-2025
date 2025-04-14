@@ -6,14 +6,14 @@ const theme = createTheme({
       main: "#6daff9", // Change this to your primary color
     },
     secondary: {
-      main: "#ff4081", // Change this to your secondary color
+      main: "#e3e3e3", // Change this to your secondary color
     },
     background: {
       default: "#f3f3f3",
     },
     text: {
       primary: "#222", // Dark gray text
-      button: "#fffcff", 
+      button: "#fffcff",
     },
   },
   typography: {
