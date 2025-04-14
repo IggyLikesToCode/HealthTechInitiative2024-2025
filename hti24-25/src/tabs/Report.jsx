@@ -4,32 +4,21 @@ import {
   Container,
   Typography,
   Button,
-  Modal,
   Box,
   TextField,
   Stack,
+  InputLabel,
   IconButton,
-  Divider,
+  InputAdornment,
   Paper,
 } from "@mui/material";
-
-const modalStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  borderRadius: 3,
-  boxShadow: 24,
-  p: 4,
-  backgroundColor: "#f3f3f3",
-};
+import { CameraOutlined as Camera } from "@ant-design/icons";
 
 const Report = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
   const [location, setLocation] = useState("");
   const [level, setLevel] = useState("");
   const [date, setDate] = useState("");
+  const [file, setFile] = useState(null);
 
   const handleSubmit = async () => {
     try {
@@ -58,10 +47,10 @@ const Report = () => {
 
       if (res.data.success) {
         alert("✅ Lead report submitted!");
-        setModalOpen(false);
         setLocation("");
         setLevel("");
         setDate("");
+        setFile(null);
       } else {
         alert("❌ Submission failed.");
       }
@@ -72,90 +61,73 @@ const Report = () => {
   };
 
   return (
-    <Container sx={{ py: 6 }}>
+    <Container sx={{ py: 8 }}>
       <Typography variant="h3" fontWeight="bold" gutterBottom>
         Report Lead Contamination
       </Typography>
-      <Typography variant="h6" color="text.secondary" paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-        odio.
-      </Typography>
 
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setModalOpen(true)}
-        sx={{ mb: 4 }}
+      <Box
+        sx={{
+          maxWidth: 1000,
+          mx: "auto",
+          mt: 6,
+          p: 4,
+          borderRadius: 4,
+          backgroundColor: "#dbeafe",
+        }}
       >
-        Submit a Report
-      </Button>
+        <Stack spacing={3}>
+          <TextField
+            label="Location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            fullWidth
+            InputProps={{ sx: { backgroundColor: "white", borderRadius: 1 } }}
+          />
+          <TextField
+            label="Lead Level (ppm)"
+            type="number"
+            value={level}
+            onChange={(e) => setLevel(e.target.value)}
+            fullWidth
+            InputProps={{ sx: { backgroundColor: "white", borderRadius: 1 } }}
+          />
+          <TextField
+            label="Date Tested"
+            type="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            InputLabelProps={{ shrink: true }}
+            fullWidth
+            InputProps={{ sx: { backgroundColor: "white", borderRadius: 1 } }}
+          />
 
-      <Paper
-        elevation={2}
-        sx={{ p: 4, backgroundColor: "#dbeafe", borderRadius: 3 }}
-      >
-        <Typography variant="h5" color="primary" fontWeight="bold" gutterBottom>
-          Why Reporting Matters
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo
-          risus, porta ac consectetur ac, vestibulum at eros. Sed posuere
-          consectetur est at lobortis.
-        </Typography>
-      </Paper>
+          <Box>
+            <InputLabel sx={{ mb: 1 }}>
+              Upload Lead Test Photo (Optional)
+            </InputLabel>
 
-      <Modal open={isModalOpen} onClose={() => setModalOpen(false)}>
-        <Box sx={modalStyle}>
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Typography variant="h6" color="primary">
-              New Lead Report
-            </Typography>
-            <IconButton onClick={() => setModalOpen(false)}>
-              <Typography color="textSecondary">X</Typography>
-            </IconButton>
+            <Camera sx={{ color: "#60a5fa", mr: 1 }} />
+            <input
+              type="file"
+              accept="image/*"
+              onChange={(e) => setFile(e.target.files[0])}
+              style={{ flex: 1, border: "none", outline: "none" }}
+            />
           </Box>
-          <Divider sx={{ my: 2 }} />
-          <Stack spacing={2}>
-            <TextField
-              label="Location"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              fullWidth
-            />
-            <TextField
-              label="Lead Level (ppm)"
-              type="number"
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}
-              fullWidth
-            />
-            <TextField
-              label="Date Tested"
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              InputLabelProps={{ shrink: true }}
-              fullWidth
-            />
-            <Box display="flex" justifyContent="flex-end" gap={1}>
-              <Button onClick={() => setModalOpen(false)} color="inherit">
-                Cancel
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-              >
-                Submit
-              </Button>
-            </Box>
-          </Stack>
-        </Box>
-      </Modal>
+
+          <Box display="flex" justifyContent="flex-end">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+              sx={{ color: "white", px: 4 }}
+            >
+              Submit Report
+            </Button>
+          </Box>
+        </Stack>
+      </Box>
     </Container>
   );
 };
