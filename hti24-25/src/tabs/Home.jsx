@@ -42,6 +42,7 @@ const Home = () => {
             variant="contained"
             color="primary"
             sx={{ color: "white", mt: 2 }}
+            href="/report"
           >
             Report Contamination
           </Button>
@@ -49,6 +50,7 @@ const Home = () => {
             variant="contained"
             color="secondary"
             sx={{ color: "black", mt: 2, ml: 2 }}
+            href="/map"
           >
             View Data
           </Button>
