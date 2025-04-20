@@ -46,17 +46,17 @@ const Report = () => {
       );
 
       if (res.data.success) {
-        alert("✅ Lead report submitted!");
+        alert("report submitted");
         setLocation("");
         setLevel("");
         setDate("");
         setFile(null);
       } else {
-        alert("❌ Submission failed.");
+        alert("submission failed");
       }
     } catch (err) {
       console.error("Error submitting lead report:", err);
-      alert("❌ Error submitting lead report.");
+      alert("Error submitting lead report.");
     }
   };
 

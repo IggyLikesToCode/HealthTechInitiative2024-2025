@@ -10,10 +10,10 @@ const axios = require("axios");
 
 db.query('SELECT 1')
     .then(() => {
-        console.log('✅ Successfully connected to the database');
+        console.log('Successfully connected to the database');
     })
     .catch((err) => {
-        console.error('❌ Failed to connect to the database:', err.message);
+        console.error('Failed to connect to the database:', err.message);
     });
 
 app.get("/api/get-map-levels", async (req, res) => {
@@ -60,7 +60,7 @@ app.post("/api/report-lead", async (req, res) => {
 
         res.status(200).json({ success: true });
     } catch (err) {
-        console.error("❌ Error inserting lead report:", err.message);
+        console.error("Error inserting lead report:", err.message);
         res.status(500).json({ success: false, error: err.message });
     }
 });
@@ -68,5 +68,5 @@ app.post("/api/report-lead", async (req, res) => {
 
 
 app.listen(3001, '0.0.0.0', () => {
-    console.log('🚀 Server is running on http://localhost:3001');
+    console.log('Server is running on http://localhost:3001');
 });

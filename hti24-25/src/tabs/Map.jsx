@@ -44,7 +44,6 @@ function Map() {
         fetchAll();
     }, []);
 
-    // Initialize map once
     useEffect(() => {
         if (mapRef.current) return;
 
@@ -61,7 +60,6 @@ function Map() {
         mapRef.current = map;
     }, []);
 
-    // Create all heat layers once data is in
     useEffect(() => {
         const map = mapRef.current;
         if (!map) return;
@@ -127,7 +125,6 @@ function Map() {
                     }}
                 />
 
-                {/* Floating Settings Panel */}
                 <Paper
                     elevation={4}
                     sx={{
@@ -178,7 +175,6 @@ function Map() {
                     </Select>
                 </Paper>
 
-                {/* Legend */}
                 <Box
                     sx={{
                         position: "absolute",

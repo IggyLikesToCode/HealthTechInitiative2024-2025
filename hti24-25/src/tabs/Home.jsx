@@ -124,8 +124,6 @@ const Home = () => {
         </Box>
       </Container>
 
-      {/* --- OUR MISSION --- */}
-
       <Container sx={{ alignItems: "center", width: "100%", mr: 6 }}>
         <Grid
           container
@@ -188,8 +186,7 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-
-      {/* --- OUR PARTNERS --- */}
+      
       <Box sx={{ mt: 4, ml: 10 }}>
         <Typography variant="h3" fontWeight="bold" color="textPrimary" mb={2}>
           Our Partners
