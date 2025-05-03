@@ -63,28 +63,20 @@ function Map() {
         if (!map) return;
 
         if (historicalData.length > 0 && !heatLayersRef.current.historical) {
-            heatLayersRef.current.historical = L.heatLayer(historicalData, {
-                radius: 25,
-                blur: 15,
-                minOpacity: 0.5,
-            }).addTo(map);
+            heatLayersRef.current.historical = L.heatLayer(historicalData, { radius: 25, blur: 15, minOpacity: 0.5 });
+            if (layerType === "historical") map.addLayer(heatLayersRef.current.historical);
         }
 
         if (openSourceData.length > 0 && !heatLayersRef.current.open) {
-            heatLayersRef.current.open = L.heatLayer(openSourceData, {
-                radius: 25,
-                blur: 15,
-                minOpacity: 0.5,
-            }).addTo(map);
+            heatLayersRef.current.open = L.heatLayer(openSourceData, { radius: 25, blur: 15, minOpacity: 0.5 });
+            if (layerType === "open") map.addLayer(heatLayersRef.current.open);
         }
 
         if (aiData.length > 0 && !heatLayersRef.current.ai) {
-            heatLayersRef.current.ai = L.heatLayer(aiData, {
-                radius: 25,
-                blur: 15,
-                minOpacity: 0.5,
-            }).addTo(map);
+            heatLayersRef.current.ai = L.heatLayer(aiData, { radius: 25, blur: 15, minOpacity: 0.5 });
+            if (layerType === "ai") map.addLayer(heatLayersRef.current.ai);
         }
+
     }, [historicalData, openSourceData, aiData]);
 
     // Toggle layer visibility
