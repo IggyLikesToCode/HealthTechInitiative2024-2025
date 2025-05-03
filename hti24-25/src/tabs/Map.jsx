@@ -16,21 +16,19 @@ function Map() {
         open: null,
         ai: null,
     });
+    const BASE_URL =
+        window.location.hostname === "localhost"
+            ? "http://localhost:3001"
+            : "http://3.149.241.113:3001";
 
     // Fetch all heatmap data once
     useEffect(() => {
         const fetchAll = async () => {
             try {
                 const [hist, open, ai] = await Promise.all([
-                    fetch("http://localhost:3001/api/get-map-levels").then((res) =>
-                        res.json()
-                    ),
-                    fetch("http://localhost:3001/api/get-open-source-data").then((res) =>
-                        res.json()
-                    ),
-                    fetch("http://localhost:3001/api/get-open-source-data").then((res) =>
-                        res.json()
-                    ),
+                    fetch(`${BASE_URL}/api/get-map-levels`).then((res) => res.json()),
+                    fetch(`${BASE_URL}/api/get-open-source-data`).then((res) => res.json()),
+                    fetch(`${BASE_URL}/api/get-open-source-data`).then((res) => res.json()),
                 ]);
 
                 setHistoricalData(hist.map(p => [p.latitude, p.longitude, p.level || 0.5]));
