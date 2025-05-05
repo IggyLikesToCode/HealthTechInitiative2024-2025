@@ -6,6 +6,39 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const axios = require("axios");
+const AWS = require("aws-sdk");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+
+const s3 = new AWS.S3({ region: "us-east-2" });
+
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        bucket: "AWSBucketforHTI", // change to your actual S3 bucket name
+        acl: "public-read",
+        key: function (req, file, cb) {
+            const filename = `${Date.now()}_${file.originalname}`;
+            cb(null, filename);
+        }
+    })
+});
+
+app.post("/upload", upload.single("image"), async (req, res) => {
+    const imageUrl = req.file.location;
+    const reportId = req.body.reportId;
+
+    try {
+        await db.query(
+            "UPDATE lead_reports SET img_path = ? WHERE id = ?",
+            [imageUrl, reportId]
+        );
+        res.json({ success: true, imageUrl });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Database update failed" });
+    }
+});
 
 
 db.query('SELECT 1')
