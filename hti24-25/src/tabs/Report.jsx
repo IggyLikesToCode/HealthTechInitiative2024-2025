@@ -13,6 +13,10 @@ import {
   Paper,
 } from "@mui/material";
 import { CameraOutlined as Camera } from "@ant-design/icons";
+const BASE_URL =
+    window.location.hostname === "localhost"
+        ? "http://localhost:3001"
+        : "http://3.149.241.113:3001"; // your EC2 IP or domain here
 
 const Report = () => {
   const [location, setLocation] = useState("");
@@ -24,9 +28,9 @@ const Report = () => {
     try {
       const locationIqKey = "pk.4e7d542fb27c753e173543c95bf667e6";
       const geoRes = await axios.get(
-        `https://us1.locationiq.com/v1/search.php?key=${locationIqKey}&q=${encodeURIComponent(
-          location
-        )}&format=json`
+          `https://us1.locationiq.com/v1/search.php?key=${locationIqKey}&q=${encodeURIComponent(
+              location
+          )}&format=json`
       );
 
       const { lat, lon } = geoRes.data[0];
@@ -40,25 +44,45 @@ const Report = () => {
         reported_by: "anonymous",
       };
 
-      const res = await axios.post(
-        "http://localhost:3001/api/report-lead",
-        payload
-      );
+      const res = await axios.post(`${BASE_URL}/api/report-lead`, payload);
 
       if (res.data.success) {
-        alert("report submitted");
+        const reportId = res.data.reportId;
+
+        if (file) {
+          const formData = new FormData();
+          formData.append("image", file);
+          formData.append("reportId", reportId);
+
+          const uploadRes = await axios.post(`${BASE_URL}/upload`, formData, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+
+          if (uploadRes.data.success) {
+            alert("Report and image uploaded successfully!");
+          } else {
+            alert("Report submitted, but image upload failed.");
+          }
+        } else {
+          alert("Report submitted successfully!");
+        }
+
+        // Reset form
         setLocation("");
         setLevel("");
         setDate("");
         setFile(null);
       } else {
-        alert("submission failed");
+        alert("Report submission failed.");
       }
     } catch (err) {
       console.error("Error submitting lead report:", err);
       alert("Error submitting lead report.");
     }
   };
+
 
   return (
     <Container sx={{ py: 8 }}>
