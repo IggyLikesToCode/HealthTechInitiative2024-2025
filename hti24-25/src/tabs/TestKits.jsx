@@ -10,10 +10,33 @@ import {
 } from "@mui/material";
 
 const TestKits = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("http://localhost:3001/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert("Your request has been sent successfully.");
+        e.target.reset();
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Server error. Try again later.");
+    }
+  };
   return (
     <Box
       sx={{
-        backgroundColor: "#f0f4ff", // subtle background
         minHeight: "100vh",
         display: "flex",
         justifyContent: "center",
@@ -49,6 +72,7 @@ const TestKits = () => {
 
           <Box
             component="form"
+            onSubmit={handleSubmit}
             noValidate
             sx={{
               display: "flex",
