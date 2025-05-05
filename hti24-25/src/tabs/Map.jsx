@@ -21,7 +21,6 @@ function Map() {
             ? "http://localhost:3001"
             : "http://3.149.241.113:3001";
 
-    // Fetch all heatmap data once
     useEffect(() => {
         const fetchAll = async () => {
             try {
@@ -79,7 +78,7 @@ function Map() {
 
     }, [historicalData, openSourceData, aiData]);
 
-    // Toggle layer visibility
+    
     useEffect(() => {
         const map = mapRef.current;
         if (!map) return;
