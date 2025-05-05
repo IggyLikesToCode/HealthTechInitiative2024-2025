@@ -10,14 +10,14 @@ const AWS = require("aws-sdk");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
+require("dotenv").config({ path: "./credentials.env" });
 
 const s3 = new AWS.S3({ region: "us-east-2" });
 
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: "AWSBucketforHTI", // change to your actual S3 bucket name
+    bucket: "AWSBucketforHTI",
     acl: "public-read",
     key: function (req, file, cb) {
       const filename = `${Date.now()}_${file.originalname}`;
@@ -67,6 +67,7 @@ app.post("/send-email", async (req, res) => {
     });
 
     res.status(200).json({ message: "Email sent successfully." });
+    console.log("Email sent successfully.");
   } catch (error) {
     console.error("Email error:", error);
     res.status(500).json({ error: "Failed to send email." });
@@ -130,13 +131,13 @@ app.post("/api/report-lead", async (req, res) => {
       reported_by,
     ];
 
-        const [result] = await db.execute(sql, values);
-        const insertedId = result.insertId;
-        res.status(200).json({ success: true, reportId: insertedId });
-    } catch (err) {
-        console.error("Error inserting lead report:", err.message);
-        res.status(500).json({ success: false, error: err.message });
-    }
+    const [result] = await db.execute(sql, values);
+    const insertedId = result.insertId;
+    res.status(200).json({ success: true, reportId: insertedId });
+  } catch (err) {
+    console.error("Error inserting lead report:", err.message);
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
 app.listen(3001, "0.0.0.0", () => {
