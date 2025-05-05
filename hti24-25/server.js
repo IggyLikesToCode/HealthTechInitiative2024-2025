@@ -89,9 +89,9 @@ app.post("/api/report-lead", async (req, res) => {
         `;
         const values = [location_name, latitude, longitude, level, date, reported_by];
 
-        await db.execute(sql, values);
-
-        res.status(200).json({ success: true });
+        const [result] = await db.execute(sql, values);
+        const insertedId = result.insertId;
+        res.status(200).json({ success: true, reportId: insertedId });
     } catch (err) {
         console.error("Error inserting lead report:", err.message);
         res.status(500).json({ success: false, error: err.message });
