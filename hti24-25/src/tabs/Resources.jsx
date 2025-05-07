@@ -33,21 +33,39 @@ const Resources = () => {
             <List>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.epa.gov/lead/protect-your-family-sources-lead"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     Find Lead Testing Kits
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.cdc.gov/nceh/lead/faqs/lead-testing.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     How to Test Your Water
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.epa.gov/lead/lead-testing-and-certification"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     Certified Labs Near You
                   </Link>
                 </ListItemText>
@@ -65,21 +83,39 @@ const Resources = () => {
             <List>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.cdc.gov/nceh/lead/health-effects.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     Health Effects of Lead
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.cdc.gov/nceh/lead/prevention/default.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     Protecting Children
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.cdc.gov/nceh/lead/default.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     CDC Guidelines
                   </Link>
                 </ListItemText>
@@ -97,21 +133,39 @@ const Resources = () => {
             <List>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.epa.gov/lead"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     EPA Lead Resources
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.who.int/news-room/fact-sheets/detail/lead-poisoning-and-health"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     WHO on Lead Exposure
                   </Link>
                 </ListItemText>
               </ListItem>
               <ListItem>
                 <ListItemText>
-                  <Link href="#" target="_blank">
+                  <Link
+                    href="https://www.ncbi.nlm.nih.gov/pmc/?term=lead+poisoning"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    component="a"
+                    underline="hover"
+                  >
                     NIH Articles
                   </Link>
                 </ListItemText>
@@ -127,7 +181,13 @@ const Resources = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
             <Paper elevation={3} sx={{ p: 2 }}>
               <Typography variant="subtitle1" fontWeight="bold">
-                <Link href="#" target="_blank" underline="hover">
+                <Link
+                  href="https://www.nytimes.com/2023/10/04/us/milwaukee-lead-pipes.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  component="a"
+                  underline="hover"
+                >
                   City Launches New Water Testing Initiative
                 </Link>
               </Typography>
@@ -141,7 +201,13 @@ const Resources = () => {
             </Paper>
             <Paper elevation={3} sx={{ p: 2 }}>
               <Typography variant="subtitle1" fontWeight="bold">
-                <Link href="#" target="_blank" underline="hover">
+                <Link
+                  href="https://www.nbcnews.com/news/us-news/lead-water-schools-epa-rule-rcna110529"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  component="a"
+                  underline="hover"
+                >
                   Schools Push for Safer Drinking Water
                 </Link>
               </Typography>
@@ -155,7 +221,13 @@ const Resources = () => {
             </Paper>
             <Paper elevation={3} sx={{ p: 2 }}>
               <Typography variant="subtitle1" fontWeight="bold">
-                <Link href="#" target="_blank" underline="hover">
+                <Link
+                  href="https://www.epa.gov/newsreleases/epa-announces-proposed-rule-remove-lead-pipes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  component="a"
+                  underline="hover"
+                >
                   New Federal Guidelines on Lead Pipes
                 </Link>
               </Typography>
