@@ -8,39 +8,44 @@ app.use(express.json());
 const axios = require("axios");
 const AWS = require("aws-sdk");
 const multer = require("multer");
-const multerS3 = require("multer-s3");
 const nodemailer = require("nodemailer");
 require("dotenv").config({ path: "./credentials.env" });
 
 const s3 = new AWS.S3({ region: "us-east-2" });
 
-const upload = multer({
-  storage: multerS3({
-    s3: s3,
-    bucket: "AWSBucketforHTI",
-    acl: "public-read",
-    key: function (req, file, cb) {
-      const filename = `${Date.now()}_${file.originalname}`;
-      cb(null, filename);
-    },
-  }),
-});
-
+const upload = multer();
 app.post("/upload", upload.single("image"), async (req, res) => {
-  const imageUrl = req.file.location;
   const reportId = req.body.reportId;
+  const file = req.file;
+
+  if (!file || !reportId) {
+    return res.status(400).json({ success: false, message: "Missing file or reportId" });
+  }
+
+  const params = {
+    Bucket: "AWSBucketforHTI",
+    Key: `uploads/${Date.now()}_${file.originalname}`,
+    Body: file.buffer,
+    ContentType: file.mimetype,
+    ACL: "public-read",
+  };
 
   try {
+    const data = await s3.upload(params).promise();
+    const imageUrl = data.Location;
+
     await db.query("UPDATE lead_reports SET img_path = ? WHERE id = ?", [
       imageUrl,
       reportId,
     ]);
+
     res.json({ success: true, imageUrl });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database update failed" });
+    console.error("Upload error:", err);
+    res.status(500).json({ success: false, error: "Failed to upload image" });
   }
 });
+
 
 app.post("/send-email", async (req, res) => {
   const { name, email, address, reason } = req.body;
@@ -130,6 +135,7 @@ app.post("/api/report-lead", async (req, res) => {
       date,
       reported_by,
     ];
+
 
     const [result] = await db.execute(sql, values);
     const insertedId = result.insertId;
