@@ -33,7 +33,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
     const data = await s3.upload(params).promise();
     const imageUrl = data.Location;
 
-    await db.query("UPDATE lead_reports SET img_path = ? WHERE id = ?", [
+    await db.query("UPDATE data_for_lead_new_crowdsourced SET img_path = ? WHERE id = ?", [
       imageUrl,
       reportId,
     ]);
