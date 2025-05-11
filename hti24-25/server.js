@@ -23,7 +23,7 @@ app.post("/upload", upload.single("image"), async (req, res) => {
   }
 
   const params = {
-    Bucket: "AWSBucketforHTI",
+    Bucket: "awsbucketforhti",
     Key: `uploads/${Date.now()}_${file.originalname}`,
     Body: file.buffer,
     ContentType: file.mimetype,
