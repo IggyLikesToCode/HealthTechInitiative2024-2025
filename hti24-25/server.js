@@ -13,7 +13,7 @@ require("dotenv").config({ path: "./credentials.env" });
 
 const s3 = new AWS.S3({ region: "us-east-2" });
 
-const upload = multer();
+const upload = multer({ limits: { fileSize: 2 * 1024 * 1024 } }); // 2MB max
 app.post("/upload", upload.single("image"), async (req, res) => {
   const reportId = req.body.reportId;
   const file = req.file;
