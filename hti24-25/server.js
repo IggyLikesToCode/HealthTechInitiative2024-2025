@@ -27,7 +27,6 @@ app.post("/upload", upload.single("image"), async (req, res) => {
     Key: `uploads/${Date.now()}_${file.originalname}`,
     Body: file.buffer,
     ContentType: file.mimetype,
-    ACL: "public-read",
   };
 
   try {
