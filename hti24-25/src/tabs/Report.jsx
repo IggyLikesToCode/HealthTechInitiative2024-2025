@@ -16,7 +16,7 @@ import { CameraOutlined as Camera } from "@ant-design/icons";
 const BASE_URL =
     window.location.hostname === "localhost"
         ? "http://localhost:3001"
-        : "http://3.149.241.113:3001"; // your EC2 IP or domain here
+        : "http://3.149.29.241:3001"; // your EC2 IP or domain here
 
 const Report = () => {
   const [location, setLocation] = useState("");
