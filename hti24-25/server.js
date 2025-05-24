@@ -101,7 +101,7 @@ app.get("/api/get-map-levels", async (req, res) => {
 app.get("/api/get-open-source-data", async (req, res) => {
   try {
     const [rows] = await db.execute(
-      "SELECT latitude, longitude, level FROM data_for_lead_new_crowdsourced"
+      "SELECT latitude, longitude, level FROM data_for_lead_new_crowdsourced WHERE verified = 1"
     );
     res.json(rows);
   } catch (err) {
