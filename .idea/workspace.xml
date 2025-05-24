@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/src/tabs/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/tabs/Map.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +73,14 @@
       <workItem from="1743795444683" duration="8209000" />
       <workItem from="1743811566825" duration="2231000" />
       <workItem from="1744508533436" duration="1776000" />
+      <workItem from="1744655253541" duration="9613000" />
+      <workItem from="1744668545243" duration="173000" />
+      <workItem from="1744728913627" duration="1702000" />
+      <workItem from="1745343060197" duration="10961000" />
+      <workItem from="1746485346851" duration="3315000" />
+      <workItem from="1746843832809" duration="4553000" />
+      <workItem from="1746923357419" duration="6344000" />
+      <workItem from="1747101530543" duration="11000" />
     </task>
     <servers />
   </component>
