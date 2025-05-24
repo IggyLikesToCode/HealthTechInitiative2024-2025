@@ -18,6 +18,35 @@ import {
   WarningOutlined as Warning,
   HomeOutlined as City,
 } from "@ant-design/icons";
+import { keyframes } from "@mui/system";
+
+const pulse = keyframes`
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.7;
+    }
+`;
+
+const hotspots = [
+    { top: "42%", left: "51%" },
+    { top: "58%", left: "63.5%" },
+    { top: "40%", left: "30%" },
+    { top: "50.5%", left: "70.3%" },
+    { top: "60%", left: "40%" },
+    { top: "26%", left: "26%" },
+    { top: "26%", left: "83%" },
+    { top: "60%", left: "69%" },
+    { top: "65%", left: "54%" }
+];
+
 
 const Home = () => {
   return (
@@ -56,21 +85,66 @@ const Home = () => {
           </Button>
         </Box>
 
-        <Box
-          sx={{
-            width: "45%",
-            height: "300px",
-            backgroundColor: "#dbeafe",
-            borderRadius: "20px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Typography variant="h5" color="primary">
-            [Graphic Placeholder]
-          </Typography>
-        </Box>
+          <Box
+              sx={{
+                  width: "45%",
+                  height: "300px",
+                  backgroundColor: "#dbeafe",
+                  borderRadius: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  p: 2,
+                  position: "relative", // KEY LINE
+              }}
+          >
+              <Box
+                  component="img"
+                  src="/usmap.png"
+                  alt="U.S. Lead Contamination Graphic"
+                  sx={{
+                      width: "105%",
+                      height: "105%",
+                      objectFit: "contain",
+                  }}
+              />
+              {hotspots.map((spot, i) => (
+                  <React.Fragment key={i}>
+                      {/* Outer Pulse */}
+                      <Box
+                          sx={{
+                              position: "absolute",
+                              top: spot.top,
+                              left: spot.left,
+                              width: 20,
+                              height: 20,
+                              borderRadius: "50%",
+                              backgroundColor: "#bfdbfe",
+                              animation: `${pulse} 2.5s ease-in-out infinite`,
+                              animationDelay: `${i * 0.3}s`, // staggered delay
+                              transform: "translate(-50%, -50%)",
+                              pointerEvents: "none",
+                          }}
+                      />
+
+                      {/* Inner Core */}
+                      <Box
+                          sx={{
+                              position: "absolute",
+                              top: spot.top,
+                              left: spot.left,
+                              width: 12,
+                              height: 12,
+                              borderRadius: "50%",
+                              backgroundColor: "#1d4ed8",
+                              transform: "translate(-50%, -50%)",
+                              zIndex: 2,
+                          }}
+                      />
+                  </React.Fragment>
+              ))}
+          </Box>
+
       </Container>
 
       <Container
