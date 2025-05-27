@@ -36,17 +36,16 @@ const pulse = keyframes`
 `;
 
 const hotspots = [
-    { top: "42%", left: "51%" },
-    { top: "58%", left: "63.5%" },
-    { top: "40%", left: "30%" },
-    { top: "50.5%", left: "70.3%" },
-    { top: "60%", left: "40%" },
-    { top: "26%", left: "26%" },
-    { top: "26%", left: "83%" },
-    { top: "60%", left: "69%" },
-    { top: "65%", left: "54%" }
+  { top: "42%", left: "51%" },
+  { top: "58%", left: "63.5%" },
+  { top: "40%", left: "30%" },
+  { top: "50.5%", left: "70.3%" },
+  { top: "60%", left: "40%" },
+  { top: "26%", left: "26%" },
+  { top: "26%", left: "83%" },
+  { top: "60%", left: "69%" },
+  { top: "65%", left: "54%" },
 ];
-
 
 const Home = () => {
   return (
@@ -85,66 +84,62 @@ const Home = () => {
           </Button>
         </Box>
 
+        <Box
+          sx={{
+            width: "45%",
+            height: "300px",
+            backgroundColor: "#dbeafe",
+            borderRadius: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 2,
+            position: "relative",
+          }}
+        >
           <Box
-              sx={{
-                  width: "45%",
-                  height: "300px",
-                  backgroundColor: "#dbeafe",
-                  borderRadius: "20px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  p: 2,
-                  position: "relative", // KEY LINE
-              }}
-          >
+            component="img"
+            src="/assets/usmap.png"
+            alt="U.S. Lead Contamination Graphic"
+            sx={{
+              width: "105%",
+              height: "105%",
+              objectFit: "contain",
+            }}
+          />
+          {hotspots.map((spot, i) => (
+            <React.Fragment key={i}>
               <Box
-                  component="img"
-                  src="/usmap.png"
-                  alt="U.S. Lead Contamination Graphic"
-                  sx={{
-                      width: "105%",
-                      height: "105%",
-                      objectFit: "contain",
-                  }}
+                sx={{
+                  position: "absolute",
+                  top: spot.top,
+                  left: spot.left,
+                  width: 20,
+                  height: 20,
+                  borderRadius: "50%",
+                  backgroundColor: "#bfdbfe",
+                  animation: `${pulse} 2.5s ease-in-out infinite`,
+                  animationDelay: `${i * 0.3}s`,
+                  transform: "translate(-50%, -50%)",
+                  pointerEvents: "none",
+                }}
               />
-              {hotspots.map((spot, i) => (
-                  <React.Fragment key={i}>
-                      {/* Outer Pulse */}
-                      <Box
-                          sx={{
-                              position: "absolute",
-                              top: spot.top,
-                              left: spot.left,
-                              width: 20,
-                              height: 20,
-                              borderRadius: "50%",
-                              backgroundColor: "#bfdbfe",
-                              animation: `${pulse} 2.5s ease-in-out infinite`,
-                              animationDelay: `${i * 0.3}s`, // staggered delay
-                              transform: "translate(-50%, -50%)",
-                              pointerEvents: "none",
-                          }}
-                      />
-
-                      {/* Inner Core */}
-                      <Box
-                          sx={{
-                              position: "absolute",
-                              top: spot.top,
-                              left: spot.left,
-                              width: 12,
-                              height: 12,
-                              borderRadius: "50%",
-                              backgroundColor: "#1d4ed8",
-                              transform: "translate(-50%, -50%)",
-                              zIndex: 2,
-                          }}
-                      />
-                  </React.Fragment>
-              ))}
-          </Box>
-
+              <Box
+                sx={{
+                  position: "absolute",
+                  top: spot.top,
+                  left: spot.left,
+                  width: 12,
+                  height: 12,
+                  borderRadius: "50%",
+                  backgroundColor: "#1d4ed8",
+                  transform: "translate(-50%, -50%)",
+                  zIndex: 2,
+                }}
+              />
+            </React.Fragment>
+          ))}
+        </Box>
       </Container>
 
       <Container
@@ -230,7 +225,6 @@ const Home = () => {
             </Box>
           </Grid>
 
-          {/* TEXT RIGHT */}
           <Grid item xs={12} md={6}>
             <Typography
               variant="h3"
@@ -260,14 +254,14 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-      
+
       <Box sx={{ mt: 4, ml: 10 }}>
         <Typography variant="h3" fontWeight="bold" color="textPrimary" mb={2}>
           Our Partners
         </Typography>
         <Typography variant="h6" color="text.secondary" mb={4}>
-          Collaborating with trusted organizations across public health,
-          education, and tech.
+          Thank you to our amazing sponsors and partners who help keep Health
+          Tech Initiative running!
         </Typography>
 
         <Box
