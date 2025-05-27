@@ -46,7 +46,7 @@ const TestKits = () => {
     >
       <Card
         sx={{
-          width: { xs: "90%", sm: "80%", md: "60%", lg: "50%" },
+          width: { xs: "95%", sm: "90%", md: "80%", lg: "70%" },
           borderRadius: "32px",
           boxShadow: "0 8px 30px rgba(0,0,0,0.1)",
         }}
