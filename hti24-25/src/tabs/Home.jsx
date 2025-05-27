@@ -268,34 +268,57 @@ const Home = () => {
           Tech Initiative running!
         </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            gap: 5,
-            overflowX: "auto",
-            pb: 2,
-            "&::-webkit-scrollbar": { display: "none" },
-          }}
-        >
-          <Avatar
-            alt="Partner 1"
-            sx={{ bgcolor: "primary", width: 80, height: 80 }}
+          <Box
+              sx={{
+                  display: "flex",
+                  gap: 5,
+                  overflowX: "auto",
+                  pb: 2,
+                  "&::-webkit-scrollbar": { display: "none" },
+              }}
           >
-            <User></User>
-          </Avatar>
-          <Avatar
-            alt="Partner 1"
-            sx={{ bgcolor: "#6daff9", width: 80, height: 80 }}
-          >
-            <User></User>
-          </Avatar>
-          <Avatar
-            alt="Partner 1"
-            sx={{ bgcolor: "primary", width: 80, height: 80 }}
-          >
-            <User></User>
-          </Avatar>
-        </Box>
+              {/* staples partner */}
+              <Avatar
+                  alt="Staples High School"
+                  src="/assets/stapleshighschool.png"
+                  sx={{
+                      width: "10vw",
+                      height: "10vw",
+                      maxWidth: "110px",
+                      maxHeight: "110px",
+                  }}
+              />
+
+              {/*
+              <Avatar
+                  alt="Partner 2"
+                  sx={{
+                      bgcolor: "#6daff9",
+                      width: "8vw",
+                      height: "8vw",
+                      maxWidth: "100px",
+                      maxHeight: "100px",
+                  }}
+              >
+                  <User />
+              </Avatar>
+
+              {/* Gray circular partner icon */}
+              {/*<Avatar
+                  alt="Partner 3"
+                  sx={{
+                      bgcolor: "primary.main",
+                      width: "8vw",
+                      height: "8vw",
+                      maxWidth: "100px",
+                      maxHeight: "100px",
+                  }}
+
+              >
+                  <User />
+              </Avatar>*/}
+
+          </Box>
       </Box>
 
       <footer
