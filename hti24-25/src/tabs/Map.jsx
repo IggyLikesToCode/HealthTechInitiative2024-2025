@@ -19,7 +19,7 @@ function Map() {
     const BASE_URL =
         window.location.hostname === "localhost"
             ? "http://localhost:3001"
-            : "http://18.116.67.201:3001";
+            : "http://18.217.211.7:3001";
 
     useEffect(() => {
         const fetchAll = async () => {
