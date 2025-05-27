@@ -206,23 +206,27 @@ const Home = () => {
           }}
         >
           <Grid item md={6}>
-            <Box
-              sx={{
-                height: 280,
-                background: "#dbeafe",
-                borderRadius: "20px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "1.2rem",
-                color: "#6daff9",
-                fontWeight: 600,
-                width: "300px",
-                height: "300px",
-              }}
-            >
-              <Typography>[Graphic]</Typography>
-            </Box>
+              <Box
+                  sx={{
+                      height: 280,
+                      background: "#dbeafe",
+                      borderRadius: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      width: "300px",
+                      height: "300px",
+                  }}
+              >
+                  <Box
+                      component="img"
+                      src="/assets/Waterdrop.svg"
+                      alt="Waterdrop Graphic"
+                      sx={{ width: "200%", height: "200%", ml:"-7%" }}
+                  />
+              </Box>
+
+
           </Grid>
 
           <Grid item xs={12} md={6}>
