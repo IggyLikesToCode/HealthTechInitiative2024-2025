@@ -138,7 +138,7 @@ const Report = () => {
 
               <Box>
                 <InputLabel sx={{ mb: 1 }}>
-                  Upload Lead Test Photo (Optional)
+                  Upload Lead Test Photo
                 </InputLabel>
                 <input
                     type="file"
