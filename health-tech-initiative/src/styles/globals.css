@@ -3,4 +3,32 @@
 @theme {
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-primary: #6daff9; /* primary color */
+  --color-primary-hover: #5a9cd8; /* primary color on hover */
+  --color-secondary: #dbeafe; /* background color */
+  --color-background: #ffffff; /* secondary color */
+  --color-text: #222; /* text color */
+  --color-text-secondary: #808080; /* text color */
+  --color-button: #fffcff; /* button color */
+}
+
+@keyframes pulse {
+  0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+  }
+  50% {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.3;
+  }
+  100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.7;
+  }
+}
+
+:root {
+  --geist-sans: 'Geist Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--color-background);
 }
