@@ -117,7 +117,7 @@ const Report = () => {
                   variant="outlined"
               />
               <TextField
-                  label="Lead Level (ppm)"
+                  label="Lead Level (ppb)"
                   type="number"
                   value={level}
                   onChange={(e) => setLevel(e.target.value)}
