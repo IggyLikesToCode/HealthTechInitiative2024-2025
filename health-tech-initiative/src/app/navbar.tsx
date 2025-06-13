@@ -11,7 +11,7 @@ export default function Navbar() {
                 <Link href="/data" className="text-text hover:text-primary transition">Data</Link>
                 <Link href="/report" className="text-text hover:text-primary transition">Report</Link>
                 <Link href="/testkits" className="text-text hover:text-primary transition">Test Kits</Link>
-                <Link href="/data" className="text-text hover:text-primary transition">Resources</Link>
+                <Link href="/resources" className="text-text hover:text-primary transition">Resources</Link>
             </div>
         </div>
     )

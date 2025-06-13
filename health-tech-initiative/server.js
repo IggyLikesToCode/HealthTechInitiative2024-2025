@@ -1,15 +1,18 @@
-const express = require("express");
-const cors = require("cors");
-const db = require("./db");
-const mysql = require("mysql2");
+import express from "express";
+import cors from "cors";
+import db from "./db.js";
+import next from "next";
 const app = express();
 app.use(cors());
 app.use(express.json());
-const axios = require("axios");
-const AWS = require("aws-sdk");
-const multer = require("multer");
-const nodemailer = require("nodemailer");
-require("dotenv").config({ path: "./credentials.env" });
+import AWS from "aws-sdk";
+import multer from "multer";
+import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config({ path: "./credentials.env" });
+
+const server = next({ dev: process.env.NODE_ENV !== "production" });
+const handle = server.getRequestHandler();
 
 const s3 = new AWS.S3({ region: "us-east-2" });
 
@@ -150,3 +153,7 @@ app.post("/api/report-lead", async (req, res) => {
 app.listen(3001, "0.0.0.0", () => {
   console.log("Server is running on http://localhost:3001");
 });
+
+// app.get("*", (req, res) => {
+//   return handle(req, res);
+// });

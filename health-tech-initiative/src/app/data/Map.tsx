@@ -3,6 +3,8 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet.heat/dist/leaflet-heat.js";
 
+import dynamic from 'next/dynamic'
+
 export default function Map() {
     const [layerType, setLayerType] = useState("historical");
     const [historicalData, setHistoricalData] = useState([]);
@@ -98,9 +100,26 @@ export default function Map() {
     
 
     return (
-        <div>
-            <div id="map" className="w-full h-[400px] z-1" />
-            hello
+        <div className="relative w-4/5 h-[500px] rounded-lg overflow-hidden shadow mt-8">
+            <div id="map" className="w-full h-full z-1" />
+
+            <div className='absolute top-4 right-4 z-1000 bg-white rounded p-2 min-w-[180px]'>
+                <p className="text-sm font-semibold mb-2">Data Layer</p>
+                <select value={layerType} onChange={(e) => setLayerType(e.target.value)} className="w-full p-2 border rounded">
+                    <option value="historical">Historical Data</option>
+                    <option value="open">Open Source Data</option>
+                    <option value="ai">AI Generated Data</option>
+                </select>
+            </div>
+
+            <div className="absolute w-44 bottom-4 right-4 z-1000 bg-white rounded p-1 shadow">
+                <p className="text-xs">Contamination Level</p>
+                <div className="h-2 rounded mt-1 bg-gradient-to-r from-[#93c5fd] to-[#1d4ed8]" />
+                <div className="flex justify-between text-xs">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </div>
         </div>
     )
 }
