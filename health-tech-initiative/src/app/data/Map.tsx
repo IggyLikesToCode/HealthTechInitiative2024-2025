@@ -100,7 +100,7 @@ export default function Map() {
     
 
     return (
-        <div className="relative w-4/5 h-[500px] rounded-lg overflow-hidden shadow mt-8">
+        <div className="relative w-4/5 h-[500px] rounded-lg overflow-hidden shadow mt-8 mb-8">
             <div id="map" className="w-full h-full z-1" />
 
             <div className='absolute top-4 right-4 z-1000 bg-white rounded p-2 min-w-[180px]'>
