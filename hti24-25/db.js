@@ -1,12 +1,14 @@
 const mysql = require('mysql2');
 
-require('dotenv').config();
 
 const pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-});
+    host: 'database-1.ct64se8ooimh.us-east-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'HTI24-25',
+    database: 'lead_contamination',
+    port: 3306, // default for MySQL
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0});
 
 module.exports = pool.promise();
