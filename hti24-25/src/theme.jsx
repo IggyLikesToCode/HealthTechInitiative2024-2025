@@ -9,7 +9,7 @@ const theme = createTheme({
       main: "#e3e3e3", // Change this to your secondary color
     },
     background: {
-      default: "#f3f3f3",
+      default: "#FFFFFF",
     },
     text: {
       primary: "#222", // Dark gray text

@@ -185,7 +185,7 @@ function Map() {
                             height: "10px",
                             borderRadius: "5px",
                             mt: 0.5,
-                            background: "linear-gradient(to right, #93c5fd, #1d4ed8)",
+                            background: "linear-gradient(to right,rgb(80, 127, 247),rgb(238, 25, 25))",
                         }}
                     />
                     <Box

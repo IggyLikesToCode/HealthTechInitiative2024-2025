@@ -87,15 +87,13 @@ const Report = () => {
             pt: "8vh"
           }}
       >
-        <Card
+        <Box
             sx={{
-              width: { xs: "95%", sm: "85%", md: "70%", lg: "60%" },
-              borderRadius: "32px",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.1)",
+              width:"45%"
             }}
         >
           <CardContent sx={{ p: { xs: 4, sm: 6 } }}>
-            <Typography variant="h3" fontWeight="bold" align="center" gutterBottom>
+            <Typography variant="h4" align="center" gutterBottom>
               Report Lead Contamination
             </Typography>
             <Box
@@ -136,12 +134,14 @@ const Report = () => {
 
               <Box>
                 <InputLabel sx={{ mb: 1 }}>
-                  Upload Lead Test Photo (Optional)
+                  Upload Lead Test Photo*
                 </InputLabel>
                 <input
                     type="file"
                     accept="image/*"
                     onChange={(e) => setFile(e.target.files[0])}
+                    color="blue"
+                    
                 />
               </Box>
 
@@ -151,16 +151,17 @@ const Report = () => {
                   fullWidth
                   onClick={handleSubmit}
                   sx={{
-                    py: 1.5,
+                    py: .5,
                     fontWeight: "bold",
                     fontSize: "1.1rem",
+                    color:"white"
                   }}
               >
                 Submit Report
               </Button>
             </Box>
           </CardContent>
-        </Card>
+        </Box>
       </Box>
   );
 };
