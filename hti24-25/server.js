@@ -118,13 +118,14 @@ app.post("/api/report-lead", async (req, res) => {
     latitude,
     longitude,
     reported_by = "anonymous",
+    test_kit_used
   } = req.body;
 
   try {
     const sql = `
             INSERT INTO data_for_lead_new_crowdsourced 
-            (location_name, latitude, longitude, level, date_tested, reported_by)
-            VALUES (?, ?, ?, ?, ?, ?)
+            (location_name, latitude, longitude, level, date_tested, reported_by, test_kit_used)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         `;
     const values = [
       location_name,
@@ -133,6 +134,7 @@ app.post("/api/report-lead", async (req, res) => {
       level,
       date,
       reported_by,
+      test_kit_used,
     ];
 
 

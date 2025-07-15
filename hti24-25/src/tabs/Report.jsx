@@ -18,6 +18,7 @@ const BASE_URL = window.location.hostname === "localhost"
 
 
 const Report = () => {
+  const [testKit, setTestKit] = useState("")
   const [location, setLocation] = useState("");
   const [level, setLevel] = useState("");
   const [date, setDate] = useState("");
@@ -39,6 +40,7 @@ const Report = () => {
         latitude: parseFloat(lat),
         longitude: parseFloat(lon),
         reported_by: "anonymous",
+        test_kit_used: testKit
       };
 
       const res = await axios.post(`${BASE_URL}/api/report-lead`, payload);
@@ -121,6 +123,15 @@ const Report = () => {
                   type="number"
                   value={level}
                   onChange={(e) => setLevel(e.target.value)}
+                  fullWidth
+                  required
+                  variant="outlined"
+              />
+              <TextField
+                  label="Test Kit Used"
+                  type="text"
+                  value={testKit}
+                  onChange={(e) => setTestKit(e.target.value)}
                   fullWidth
                   required
                   variant="outlined"
