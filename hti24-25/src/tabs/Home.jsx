@@ -160,36 +160,37 @@ const Home = () => {
             p: 4,
           }}
         >
-          <Grid container spacing={4} justifyContent="space-around">
-            <Grid item xs={12} sm={4} textAlign="center">
-              <User style={{ color: "#6daff9", fontSize: 50 }} />
-              <Typography variant="h4" fontWeight="bold" color="primary">
-                2.3M+
-              </Typography>
-              <Typography variant="subtitle1" color="primary">
-                People Affected
-              </Typography>
-            </Grid>
+            <Grid container spacing={4} justifyContent="space-around">
+                <Grid item xs={12} sm={4} textAlign="center">
+                    <User style={{ color: "#6daff9", fontSize: 50 }} />
+                    <Typography variant="h4" fontWeight="bold" color="primary">
+                        800M+
+                    </Typography>
+                    <Typography variant="subtitle1" color="primary">
+                        Children Exposed Globally
+                    </Typography>
+                </Grid>
 
-            <Grid item xs={12} sm={4} textAlign="center">
-              <City style={{ color: "#6daff9", fontSize: 50 }} />
-              <Typography variant="h4" fontWeight="bold" color="primary">
-                1,250+
-              </Typography>
-              <Typography variant="subtitle1" color="primary">
-                Cities Reported
-              </Typography>
+                <Grid item xs={12} sm={4} textAlign="center">
+                    <City style={{ color: "#6daff9", fontSize: 50 }} />
+                    <Typography variant="h4" fontWeight="bold" color="primary">
+                        7,000+
+                    </Typography>
+                    <Typography variant="subtitle1" color="primary">
+                        Cities Potentially Affected
+                    </Typography>
+                </Grid>
+
+                <Grid item xs={12} sm={4} textAlign="center">
+                    <Warning style={{ color: "#6daff9", fontSize: 50 }} />
+                    <Typography variant="h4" fontWeight="bold" color="primary">
+                        1,000+
+                    </Typography>
+                    <Typography variant="subtitle1" color="primary">
+                        Active Health Alerts
+                    </Typography>
+                </Grid>
             </Grid>
-            <Grid item xs={12} sm={4} textAlign="center">
-              <Warning style={{ color: "#6daff9", fontSize: 50 }} />
-              <Typography variant="h4" fontWeight="bold" color="primary">
-                780
-              </Typography>
-              <Typography variant="subtitle1" color="primary">
-                Active Warnings
-              </Typography>
-            </Grid>
-          </Grid>
         </Box>
       </Container>
 

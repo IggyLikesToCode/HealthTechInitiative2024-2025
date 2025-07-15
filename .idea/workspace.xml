@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +79,7 @@
       <workItem from="1746923357419" duration="6344000" />
       <workItem from="1747101530543" duration="11000" />
       <workItem from="1750784208188" duration="2426000" />
-      <workItem from="1752601621847" duration="637000" />
+      <workItem from="1752601621847" duration="1151000" />
     </task>
     <servers />
   </component>
