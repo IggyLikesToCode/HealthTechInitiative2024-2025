@@ -11,10 +11,10 @@ import {
 import { useState } from "react";
 import axios from "axios";
 
+
 const BASE_URL = window.location.hostname === "localhost"
     ? "http://localhost:3001"
-    : "http://18.217.211.7:3001";
-
+    : "http://18.116.67.201:3001";
 
 
 const Report = () => {
@@ -23,6 +23,7 @@ const Report = () => {
   const [date, setDate] = useState("");
   const [file, setFile] = useState(null);
 
+
   const handleSubmit = async () => {
     try {
       const locationIqKey = "pk.4e7d542fb27c753e173543c95bf667e6";
@@ -30,7 +31,9 @@ const Report = () => {
           `https://us1.locationiq.com/v1/search.php?key=${locationIqKey}&q=${encodeURIComponent(location)}&format=json`
       );
 
+
       const { lat, lon } = geoRes.data[0];
+
 
       const payload = {
         location_name: location,
@@ -41,21 +44,26 @@ const Report = () => {
         reported_by: "anonymous",
       };
 
+
       const res = await axios.post(`${BASE_URL}/api/report-lead`, payload);
+
 
       if (res.data.success) {
         const reportId = res.data.reportId;
+
 
         if (file) {
           const formData = new FormData();
           formData.append("image", file);
           formData.append("reportId", reportId);
 
+
           const uploadRes = await axios.post(`${BASE_URL}/upload`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
           });
+
 
           if (uploadRes.data.success) {
             alert("Report and image uploaded successfully!");
@@ -65,6 +73,7 @@ const Report = () => {
         } else {
           alert("Report submitted successfully!");
         }
+
 
         setLocation("");
         setLevel("");
@@ -79,6 +88,7 @@ const Report = () => {
     }
   };
 
+
   return (
       <Box
           sx={{
@@ -89,15 +99,13 @@ const Report = () => {
             pt: "8vh"
           }}
       >
-        <Card
+        <Box
             sx={{
-              width: { xs: "95%", sm: "85%", md: "70%", lg: "60%" },
-              borderRadius: "32px",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.1)",
+              width:"45%"
             }}
         >
           <CardContent sx={{ p: { xs: 4, sm: 6 } }}>
-            <Typography variant="h3" fontWeight="bold" align="center" gutterBottom>
+            <Typography variant="h4" align="center" gutterBottom>
               Report Lead Contamination
             </Typography>
             <Box
@@ -117,7 +125,7 @@ const Report = () => {
                   variant="outlined"
               />
               <TextField
-                  label="Lead Level (ppb)"
+                  label="Lead Level (ppm)"
                   type="number"
                   value={level}
                   onChange={(e) => setLevel(e.target.value)}
@@ -136,16 +144,20 @@ const Report = () => {
                   variant="outlined"
               />
 
+
               <Box>
                 <InputLabel sx={{ mb: 1 }}>
-                  Upload Lead Test Photo
+                  Upload Lead Test Photo*
                 </InputLabel>
                 <input
                     type="file"
                     accept="image/*"
                     onChange={(e) => setFile(e.target.files[0])}
+                    color="blue"
+                   
                 />
               </Box>
+
 
               <Button
                   variant="contained"
@@ -153,18 +165,20 @@ const Report = () => {
                   fullWidth
                   onClick={handleSubmit}
                   sx={{
-                    py: 1.5,
+                    py: .5,
                     fontWeight: "bold",
                     fontSize: "1.1rem",
+                    color:"white"
                   }}
               >
                 Submit Report
               </Button>
             </Box>
           </CardContent>
-        </Card>
+        </Box>
       </Box>
   );
 };
+
 
 export default Report;

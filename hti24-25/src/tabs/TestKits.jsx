@@ -6,7 +6,7 @@ import {
   Container,
   Typography,
   TextField,
-  Button,
+  Button
 } from "@mui/material";
 
 const TestKits = () => {
@@ -36,99 +36,85 @@ const TestKits = () => {
   };
   return (
     <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        py: 8,
-      }}
-    >
-      <Card
-        sx={{
-          width: { xs: "95%", sm: "90%", md: "80%", lg: "70%" },
-          borderRadius: "32px",
-          boxShadow: "0 8px 30px rgba(0,0,0,0.1)",
-        }}
+          sx={{
+            minHeight: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "flex-start",
+            pt: "8vh"
+          }}
       >
-        <CardContent sx={{ p: { xs: 4, sm: 6 } }}>
-          <Typography
-            variant="h3"
-            fontWeight="bold"
-            align="center"
-            gutterBottom
-          >
-            Request a Free Lead Test Kit
-          </Typography>
-          <Typography
-            variant="body1"
-            align="center"
-            color="text.secondary"
-            mb={4}
-          >
-            Fill out this form and we’ll review your request. If approved, we’ll
-            send you a free kit to test your water for lead contamination.
-          </Typography>
-
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
+        <Box
             sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 3,
+              width:"45%"
             }}
-          >
-            <TextField
-              fullWidth
-              label="Full Name"
-              name="name"
-              required
-              variant="outlined"
-            />
-            <TextField
-              fullWidth
-              label="Email Address"
-              name="email"
-              type="email"
-              required
-              variant="outlined"
-            />
-            <TextField
-              fullWidth
-              label="Mailing Address"
-              name="address"
-              multiline
-              rows={2}
-              required
-              variant="outlined"
-            />
-            <TextField
-              fullWidth
+        >
+          <CardContent sx={{ p: { xs: 4, sm: 6 } }}>
+            <Typography variant="h4" align="center" gutterBottom>
+              Request a Lead Kit
+            </Typography>
+            <Box
+            component="form"
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 3,
+                  mt: 3,
+                }}
+                
+            >
+              <TextField
+                  label="Full Name"
+                  type="text"
+                  name="name"
+                  fullWidth
+                  required
+                  variant="outlined"
+              />
+              <TextField
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  fullWidth
+                  required
+                  variant="outlined"
+              />
+              <TextField
+                  label="Mailing Address"
+                  type="text"
+                  name="address"
+                  fullWidth
+                  required
+                  variant="outlined"
+              />
+              <TextField
               label="Reason for Request (optional)"
               name="reason"
-              multiline
-              rows={3}
-              variant="outlined"
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
+              InputLabelProps={{ shrink: true }}
               fullWidth
-              sx={{
-                py: 1.5,
-                fontWeight: "bold",
-                fontSize: "1.1rem",
-              }}
-            >
-              Submit Request
-            </Button>
-          </Box>
-        </CardContent>
-      </Card>
-    </Box>
+              rows={5}
+              variant="outlined"
+              />
+
+
+              <Button
+                  variant="contained"
+                  color="primary"
+                  fullWidth
+                  onClick={handleSubmit}
+                  sx={{
+                    py: .5,
+                    fontWeight: "bold",
+                    fontSize: "1.1rem",
+                    color:"white"
+                  }}
+              >
+                Submit Report
+              </Button>
+            </Box>
+          </CardContent>
+        </Box>
+      </Box>
   );
 };
 

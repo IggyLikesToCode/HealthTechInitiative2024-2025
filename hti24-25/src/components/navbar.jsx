@@ -32,9 +32,6 @@ const Navbar = () => {
           <Link underline="hover" color="inherit" href="/TestKits">
             Test Kits
           </Link>
-          <Link underline="hover" color="inherit" href="/Resources">
-            Resources
-          </Link>
         </Breadcrumbs>
       </Toolbar>
     </AppBar>
