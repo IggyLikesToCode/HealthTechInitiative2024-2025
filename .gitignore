@@ -1,1 +1,5 @@
-.idea/workspace.xml
+DB_HOST=database-1.ct64se8ooimh.us-east-2.rds.amazonaws.com
+DB_USER=admin
+DB_PASS=HIT24-25
+DB_NAME=lead_contamination
+/hti24-25/db.env
