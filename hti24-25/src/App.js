@@ -15,9 +15,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Navbar />
       <Router>
-        <Routes>
+          <Navbar />
+          <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/report" element={<Report />} />
           <Route path="/map" element={<Map />} />
