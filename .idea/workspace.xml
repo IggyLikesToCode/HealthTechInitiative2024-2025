@@ -36,6 +36,7 @@
     &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.Map.jsx.executor&quot;: &quot;Run&quot;,
     &quot;Node.js.db.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.navbar.jsx.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -84,6 +85,9 @@
       <workItem from="1752601621847" duration="1820000" />
       <workItem from="1752612983929" duration="1744000" />
       <workItem from="1752614914471" duration="625000" />
+      <workItem from="1752699160231" duration="3520000" />
+      <workItem from="1753197685688" duration="921000" />
+      <workItem from="1753302916645" duration="371000" />
     </task>
     <servers />
   </component>
