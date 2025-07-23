@@ -34,7 +34,8 @@
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run server\"",
     "client": "react-scripts start",
-    "server": "node server.js"
+    "server": "node server.js",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
