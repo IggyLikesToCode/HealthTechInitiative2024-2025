@@ -10,16 +10,9 @@ const AWS = require("aws-sdk");
 const multer = require("multer");
 const nodemailer = require("nodemailer");
 require("dotenv").config({ path: "./credentials.env" });
-const path = require("path");
-
 const s3 = new AWS.S3({ region: "us-east-2" });
 
 
-app.use(express.static(path.join(__dirname, "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
 
 
 const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } }); // 10 mb max
