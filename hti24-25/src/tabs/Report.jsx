@@ -17,7 +17,7 @@ import axios from "axios";
 const BASE_URL =
     window.location.hostname === "localhost"
         ? "http://localhost:3001"
-        : "https://18.222.54.133:3001";
+        : "https://leadwatchhti.org";
 
 const Report = () => {
   const [testKit, setTestKit] = useState("");
