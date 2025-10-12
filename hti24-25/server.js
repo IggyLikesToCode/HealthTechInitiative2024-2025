@@ -16,7 +16,7 @@ const s3 = new AWS.S3({ region: "us-east-2" });
 
 
 const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } }); // 10 mb max
-app.post("/upload", upload.single("image"), async (req, res) => {
+app.post("/api/upload", upload.single("image"), async (req, res) => {
   const reportId = req.body.reportId;
   const file = req.file;
 

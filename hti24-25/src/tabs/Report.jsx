@@ -56,7 +56,7 @@ const Report = () => {
           formData.append("image", file);
           formData.append("reportId", reportId);
 
-          const uploadRes = await axios.post(`${BASE_URL}/upload`, formData, {
+            const uploadRes = await axios.post(`${BASE_URL}/api/upload`, formData, {
             headers: {
               "Content-Type": "multipart/form-data",
             },
