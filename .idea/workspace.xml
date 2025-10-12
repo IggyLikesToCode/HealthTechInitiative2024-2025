@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/hti24-25/src/tabs/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/tabs/Map.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +91,7 @@
       <workItem from="1759888019414" duration="2245000" />
       <workItem from="1760062351902" duration="2007000" />
       <workItem from="1760226231777" duration="50000" />
-      <workItem from="1760234044159" duration="1447000" />
+      <workItem from="1760234044159" duration="1769000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,7 @@ function Map() {
     const BASE_URL =
         window.location.hostname === "localhost"
             ? "http://localhost:3001"
-            : "https://18.222.54.133:3001";
+            : "https://leadwatchhti.org:3001";
 
 
     useEffect(() => {
