@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/src/components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/components/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,8 @@
       <workItem from="1760062351902" duration="2007000" />
       <workItem from="1760226231777" duration="50000" />
       <workItem from="1760234044159" duration="3277000" />
-      <workItem from="1760304002701" duration="1609000" />
+      <workItem from="1760304002701" duration="2022000" />
+      <workItem from="1761092889547" duration="1136000" />
     </task>
     <servers />
   </component>

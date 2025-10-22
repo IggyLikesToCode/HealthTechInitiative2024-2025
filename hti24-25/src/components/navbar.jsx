@@ -14,6 +14,7 @@ const navItems = [
     { label: "Data", path: "/map" },
     { label: "Report", path: "/report" },
     { label: "Test Kits", path: "/testkits" },
+    { label: "Contact", path: "/contact" },
 ];
 
 const Navbar = () => {

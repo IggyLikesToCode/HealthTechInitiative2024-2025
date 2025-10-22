@@ -7,6 +7,8 @@ import Report from "./tabs/Report";
 import Map from "./tabs/Map";
 import Resources from "./tabs/Resources";
 import TestKits from "./tabs/TestKits";
+import Contact from "./tabs/Contact";
+
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/navbar.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -23,6 +25,7 @@ function App() {
           <Route path="/map" element={<Map />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/testkits" element={<TestKits />} />
+              <Route path="/contact" element={<Contact />} />
           <Route></Route>
         </Routes>
       </Router>
