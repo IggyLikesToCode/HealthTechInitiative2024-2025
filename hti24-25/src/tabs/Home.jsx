@@ -53,41 +53,46 @@ const Home = () => {
       <Container
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", md: "row" },
           alignItems: "center",
           justifyContent: "space-between",
-          py: 10,
+          py: { xs: 4, md: 10 },
         }}
       >
-        <Box sx={{ width: "50%" }}>
-          <Typography variant="h3" fontWeight="bold" gutterBottom>
+        <Box sx={{ width: { xs: "100%", md: "50%" }, mb: { xs: 4, md: 0 } }}>
+          <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}>
             Tracking Lead Contamination, Protecting Communities
           </Typography>
-          <Typography variant="h6" color="textSecondary" paragraph>
+          <Typography variant="h6" color="textSecondary" paragraph sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}>
             A nationwide open-source database to report and visualize lead
             contamination data.
           </Typography>
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ color: "white", mt: 2 }}
-            href="/report"
-          >
-            Report Contamination
-          </Button>
-          <Button
-            variant="contained"
-            color="secondary"
-            sx={{ color: "black", mt: 2, ml: 2 }}
-            href="/map"
-          >
-            View Data
-          </Button>
+          <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2 }}>
+            <Button
+              variant="contained"
+              color="primary"
+              sx={{ color: "white" }}
+              href="/report"
+              fullWidth={{ xs: true, sm: false }}
+            >
+              Report Contamination
+            </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              sx={{ color: "black" }}
+              href="/map"
+              fullWidth={{ xs: true, sm: false }}
+            >
+              View Data
+            </Button>
+          </Box>
         </Box>
 
         <Box
           sx={{
-            width: "45%",
-            height: "300px",
+            width: { xs: "100%", md: "45%" },
+            height: { xs: "250px", md: "300px" },
             backgroundColor: "#dbeafe",
             borderRadius: "20px",
             display: "flex",
@@ -157,36 +162,36 @@ const Home = () => {
             height: "auto",
             backgroundColor: "#dbeafe",
             borderRadius: "20px",
-            p: 4,
+            p: { xs: 2, md: 4 },
           }}
         >
             <Grid container spacing={4} justifyContent="space-around">
                 <Grid item xs={12} sm={4} textAlign="center">
                     <User style={{ color: "#6daff9", fontSize: 50 }} />
-                    <Typography variant="h4" fontWeight="bold" color="primary">
+                    <Typography variant="h4" fontWeight="bold" color="primary" sx={{ fontSize: { xs: "1.5rem", md: "2.125rem" } }}>
                         800M+
                     </Typography>
-                    <Typography variant="subtitle1" color="primary">
+                    <Typography variant="subtitle1" color="primary" sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}>
                         Children Exposed Globally
                     </Typography>
                 </Grid>
 
                 <Grid item xs={12} sm={4} textAlign="center">
                     <City style={{ color: "#6daff9", fontSize: 50 }} />
-                    <Typography variant="h4" fontWeight="bold" color="primary">
+                    <Typography variant="h4" fontWeight="bold" color="primary" sx={{ fontSize: { xs: "1.5rem", md: "2.125rem" } }}>
                         7,000+
                     </Typography>
-                    <Typography variant="subtitle1" color="primary">
+                    <Typography variant="subtitle1" color="primary" sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}>
                         Cities Potentially Affected
                     </Typography>
                 </Grid>
 
                 <Grid item xs={12} sm={4} textAlign="center">
                     <Warning style={{ color: "#6daff9", fontSize: 50 }} />
-                    <Typography variant="h4" fontWeight="bold" color="primary">
+                    <Typography variant="h4" fontWeight="bold" color="primary" sx={{ fontSize: { xs: "1.5rem", md: "2.125rem" } }}>
                         1,000+
                     </Typography>
-                    <Typography variant="subtitle1" color="primary">
+                    <Typography variant="subtitle1" color="primary" sx={{ fontSize: { xs: "0.875rem", md: "1rem" } }}>
                         Active Health Alerts
                     </Typography>
                 </Grid>
@@ -194,29 +199,28 @@ const Home = () => {
         </Box>
       </Container>
 
-      <Container sx={{ alignItems: "center", width: "100%", mr: 6 }}>
+      <Container sx={{ alignItems: "center", width: "100%", mr: { xs: 0, md: 6 } }}>
         <Grid
           container
           alignItems="center"
           justifyContent="space-between"
           sx={{
-            py: 10,
-            px: 4,
+            py: { xs: 4, md: 10 },
+            px: { xs: 2, md: 4 },
             borderRadius: "32px",
-            width: "90%",
+            width: { xs: "100%", md: "90%" },
           }}
         >
-          <Grid item md={6}>
+          <Grid item xs={12} md={6} sx={{ display: { xs: "none", md: "flex" }, justifyContent: "center", mb: { xs: 4, md: 0 } }}>
               <Box
                   sx={{
-                      height: 280,
                       background: "#dbeafe",
                       borderRadius: "20px",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      width: "300px",
-                      height: "300px",
+                      width: { xs: "250px", md: "300px" },
+                      height: { xs: "250px", md: "300px" },
                   }}
               >
                   <Box
@@ -236,19 +240,20 @@ const Home = () => {
               fontWeight="bold"
               color="textPrimary"
               gutterBottom
+              sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}
             >
               Our Mission
             </Typography>
             <Typography
               variant="h6"
               color="text.secondary"
-              sx={{ maxWidth: "600px", mb: 2 }}
+              sx={{ maxWidth: "600px", mb: 2, fontSize: { xs: "1rem", md: "1.25rem" } }}
             >
               Empowering every community with data to uncover and eliminate lead
               exposure risks.
             </Typography>
             <Typography
-              variant="body1"
+              variant="h6"
               color="text.secondary"
               sx={{ maxWidth: "600px" }}
             >
@@ -260,11 +265,11 @@ const Home = () => {
         </Grid>
       </Container>
 
-      <Box sx={{ mt: 4, ml: 10 }}>
-        <Typography variant="h3" fontWeight="bold" color="textPrimary" mb={2}>
+      <Box sx={{ mt: 4, ml: { xs: 2, md: 10 }, mr: { xs: 2, md: 0 } }}>
+        <Typography variant="h3" fontWeight="bold" color="textPrimary" mb={2} sx={{ fontSize: { xs: "1.75rem", md: "3rem" } }}>
           Our Partners
         </Typography>
-        <Typography variant="h6" color="text.secondary" mb={4}>
+        <Typography variant="h6" color="text.secondary" mb={4} sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}>
           Thank you to our amazing sponsors and partners who help keep Health
           Tech Initiative running!
         </Typography>
@@ -278,7 +283,6 @@ const Home = () => {
                   "&::-webkit-scrollbar": { display: "none" },
               }}
           >
-              {/* staples partner */}
               <Avatar
                   alt="Staples High School"
                   src="/assets/stapleshighschool.png"
@@ -287,37 +291,10 @@ const Home = () => {
                       height: "10vw",
                       maxWidth: "110px",
                       maxHeight: "110px",
+                      minWidth: "80px",
+                      minHeight: "80px",
                   }}
               />
-
-              {/*
-              <Avatar
-                  alt="Partner 2"
-                  sx={{
-                      bgcolor: "#6daff9",
-                      width: "8vw",
-                      height: "8vw",
-                      maxWidth: "100px",
-                      maxHeight: "100px",
-                  }}
-              >
-                  <User />
-              </Avatar>
-
-              {/* Gray circular partner icon */}
-              {/*<Avatar
-                  alt="Partner 3"
-                  sx={{
-                      bgcolor: "primary.main",
-                      width: "8vw",
-                      height: "8vw",
-                      maxWidth: "100px",
-                      maxHeight: "100px",
-                  }}
-
-              >
-                  <User />
-              </Avatar>*/}
 
           </Box>
       </Box>

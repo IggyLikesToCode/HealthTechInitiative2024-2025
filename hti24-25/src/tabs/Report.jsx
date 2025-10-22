@@ -9,6 +9,7 @@ import {
   AccordionSummary,
   AccordionDetails,
   Paper,
+  alertTitleClasses,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
@@ -86,11 +87,11 @@ const Report = () => {
   };
 
   return (
-      <Box sx={{ pt: "8vh", px: { xs: 2, sm: 6 }, minHeight: "100vh" }}>
-        <Grid container spacing={6} alignItems="flex-start">
+      <Box sx={{ pt: "8vh", px: { xs: 2, sm: 6 }, minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <Grid container spacing={4} sx={{flexDirection: { xs: "column", sm: "row" }, alignItems: "flex-start"}}>
           {/* Left: Form */}
-          <Grid item xs={12} md={7} lg={6}>
-            <Paper sx={{ p: 4 }}>
+          <Grid item sx={{ flex: "1 1 60%", minWidth: 300 }}>
+            <Paper sx={{ p: 4, maxWidth: "100%", flexGrow: 1 }}>
               <Typography variant="h5" gutterBottom>
                 Report Lead Contamination
               </Typography>
@@ -148,7 +149,7 @@ const Report = () => {
           </Grid>
 
           {/* Right: Instructions */}
-          <Grid item xs={12} md={5} lg={4}>
+          <Grid item sx={{ flex: "1 1 35%", minWidth: 250 }}>
             <Typography variant="h6" sx={{ mb: 2 }}>
               Instructions
             </Typography>

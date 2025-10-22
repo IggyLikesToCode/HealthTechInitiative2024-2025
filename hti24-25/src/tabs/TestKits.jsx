@@ -12,17 +12,17 @@ import {
 const TestKits = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
-
+    
     try {
       const response = await fetch("http://localhost:3001/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-
+      
       if (response.ok) {
         alert("Your request has been sent successfully.");
         e.target.reset();
@@ -41,16 +41,17 @@ const TestKits = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "flex-start",
-            pt: "8vh"
+            pt: { xs: "4vh", md: "8vh" },
+            px: { xs: 2, sm: 0 }
           }}
       >
         <Box
             sx={{
-              width:"45%"
+              width: { xs: "100%", sm: "80%", md: "45%" }
             }}
         >
-          <CardContent sx={{ p: { xs: 4, sm: 6 } }}>
-            <Typography variant="h4" align="center" gutterBottom>
+          <CardContent sx={{ p: { xs: 3, sm: 4, md: 6 } }}>
+            <Typography variant="h4" align="center" gutterBottom sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "2.125rem" } }}>
               Request a Lead Kit
             </Typography>
             <Box
@@ -61,7 +62,7 @@ const TestKits = () => {
                   gap: 3,
                   mt: 3,
                 }}
-                
+                             
             >
               <TextField
                   label="Full Name"
@@ -95,9 +96,7 @@ const TestKits = () => {
               rows={5}
               variant="outlined"
               />
-
-
-              <Button
+                <Button
                   variant="contained"
                   color="primary"
                   fullWidth
@@ -105,7 +104,7 @@ const TestKits = () => {
                   sx={{
                     py: .5,
                     fontWeight: "bold",
-                    fontSize: "1.1rem",
+                    fontSize: { xs: "1rem", md: "1.1rem" },
                     color:"white"
                   }}
               >

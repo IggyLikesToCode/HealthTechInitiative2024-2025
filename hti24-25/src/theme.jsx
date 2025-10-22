@@ -25,6 +25,15 @@ const theme = createTheme({
       textTransform: "none", // Prevents all caps in buttons
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 500,
+      md: 800,
+      lg: 1200,
+      xl: 1536
+  }
+  }
 });
 
 export default theme;
