@@ -16,88 +16,60 @@ const s3 = new AWS.S3({ region: "us-east-2" });
 
 
 const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } }); // 10 mb max
+const heicConvert = require("heic-convert");
+
 app.post("/api/upload", upload.single("image"), async (req, res) => {
-  const reportId = req.body.reportId;
-  const file = req.file;
+    const reportId = req.body.reportId;
+    const file = req.file;
 
-  if (!file || !reportId) {
-    return res.status(400).json({ success: false, message: "Missing file or reportId" });
-  }
+    if (!file || !reportId) {
+        return res.status(400).json({ success: false, message: "Missing file or reportId" });
+    }
 
-  const params = {
-    Bucket: "awsbucketforhti",
-    Key: `uploads/${Date.now()}_${file.originalname}`,
-    Body: file.buffer,
-    ContentType: file.mimetype,
-  };
+    let fileBuffer = file.buffer;
+    let contentType = file.mimetype;
+    let fileExtension = file.originalname.split('.').pop().toLowerCase();
+    let fileName = file.originalname;
 
-  try {
-    const data = await s3.upload(params).promise();
-    const imageUrl = data.Location;
+    // ✅ If file is HEIC, convert to JPEG
+    if (contentType === "image/heic" || contentType === "image/heif" || fileExtension === "heic" || fileExtension === "heif") {
+        try {
+            console.log("Converting HEIC → JPEG...");
+            const outputBuffer = await heicConvert({
+                buffer: fileBuffer, // the HEIC buffer
+                format: "JPEG",     // convert to JPEG
+                quality: 0.9        // 0–1 quality scale
+            });
+            fileBuffer = outputBuffer;
+            contentType = "image/jpeg";
+            fileName = file.originalname.replace(/\.[^/.]+$/, ".jpg"); // rename .heic → .jpg
+        } catch (convertErr) {
+            console.error("HEIC conversion failed:", convertErr);
+            return res.status(500).json({ success: false, message: "HEIC conversion failed" });
+        }
+    }
 
-    await db.query("UPDATE data_for_lead_new_crowdsourced SET img_path = ? WHERE id = ?", [
-      imageUrl,
-      reportId,
-    ]);
+    const params = {
+        Bucket: "awsbucketforhti",
+        Key: `uploads/${Date.now()}_${fileName}`,
+        Body: fileBuffer,
+        ContentType: contentType,
+    };
 
-    res.json({ success: true, imageUrl });
-  } catch (err) {
-    console.error("Upload error:", err);
-    res.status(500).json({ success: false, error: "Failed to upload image" });
-  }
-});
+    try {
+        const data = await s3.upload(params).promise();
+        const imageUrl = data.Location;
 
+        await db.query(
+            "UPDATE data_for_lead_new_crowdsourced SET img_path = ? WHERE id = ?",
+            [imageUrl, reportId]
+        );
 
-app.post("/send-email", async (req, res) => {
-  const { name, email, address, reason } = req.body;
-  try {
-    const transporter = nodemailer.createTransport({
-      service: "Gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"Lead Kit Request" <${process.env.EMAIL_USER}>`,
-      to: process.env.RECEIVER_EMAIL,
-      subject: "New Lead Test Kit Request",
-      html: `
-          <h2>New Request Received</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Address:</strong> ${address}</p>
-          <p><strong>Reason:</strong> ${reason || "N/A"}</p>
-        `,
-    });
-
-    res.status(200).json({ message: "Email sent successfully." });
-    console.log("Email sent successfully.");
-  } catch (error) {
-    console.error("Email error:", error);
-    res.status(500).json({ error: "Failed to send email." });
-  }
-});
-
-db.query("SELECT 1")
-  .then(() => {
-    console.log("Successfully connected to the database");
-  })
-  .catch((err) => {
-    console.error("Failed to connect to the database:", err.message);
-  });
-
-app.get("/api/get-map-levels", async (req, res) => {
-  try {
-    const [rows] = await db.execute(
-      "SELECT latitude, longitude, level FROM data_for_lead_old"
-    );
-    res.json(rows);
-  } catch (err) {
-    console.error("Error querying data:", err.message);
-    res.status(500).json({ error: "Error retrieving data" });
-  }
+        res.json({ success: true, imageUrl });
+    } catch (err) {
+        console.error("Upload error:", err);
+        res.status(500).json({ success: false, error: "Failed to upload image" });
+    }
 });
 
 app.get("/api/get-open-source-data", async (req, res) => {
