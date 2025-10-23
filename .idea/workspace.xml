@@ -7,7 +7,6 @@
     <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hti24-25/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,11 +98,15 @@
       <workItem from="1760304002701" duration="2022000" />
       <workItem from="1761092889547" duration="1317000" />
       <workItem from="1761173197705" duration="65000" />
-      <workItem from="1761182282025" duration="310000" />
+      <workItem from="1761182282025" duration="1398000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="javascript:npm:react" />
+    <option featureType="dependencySupport" implementationName="javascript:npm:next" />
   </component>
 </project>
