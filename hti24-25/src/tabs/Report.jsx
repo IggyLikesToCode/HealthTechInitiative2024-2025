@@ -10,10 +10,13 @@ import {
   AccordionDetails,
   Paper,
   alertTitleClasses,
+
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import axios from "axios";
+
+const colorChartSrc = '/assets/varify chart.png'
 
 const BASE_URL =
     window.location.hostname === "localhost"
@@ -149,45 +152,137 @@ const Report = () => {
           </Grid>
 
           {/* Right: Instructions */}
-          <Grid item sx={{ flex: "1 1 35%", minWidth: 250 }}>
+        <Grid item sx={{ flex: "1 1 35%", minWidth: 250 }}>
             <Typography variant="h6" sx={{ mb: 2 }}>
-              Instructions
+                Instructions
             </Typography>
 
-            <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography fontWeight={600}>Taking a Picture</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="body2">
-                  Ensure the test strip is well-lit and in focus. Include the color
-                  chart in the picture for reference.
-                </Typography>
-              </AccordionDetails>
+            <Accordion defaultExpanded>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontWeight={600}>Taking a Picture</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography variant="body2" sx={{ mb: 1 }}>
+                        Follow these tips to capture a usable photo of your test strip:
+                    </Typography>
+                    <Box component="ul" sx={{ pl: 3, m: 0 }}>
+                        <Box component="li">
+                            <Typography variant="body2">
+                                Shoot in bright, even lighting (avoid harsh shadows and glare).
+                            </Typography>
+                        </Box>
+                        <Box component="li">
+                            <Typography variant="body2">
+                                Place the strip on a plain background and keep the camera parallel to it.
+                            </Typography>
+                        </Box>
+                        <Box component="li">
+                            <Typography variant="body2">
+                                Include the kit’s color chart in the same frame for reference.
+                            </Typography>
+                        </Box>
+                        <Box component="li">
+                            <Typography variant="body2">
+                                Fill most of the frame with the strip + chart; ensure everything is in focus.
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 1.5,
+                            mt: 1.5,
+                            p: 1,
+                            bgcolor: "action.hover",
+                            borderRadius: 1.5,
+                        }}
+                    >
+                        <Typography variant="caption">
+                            Pro tip: Take two photos—one wider with the chart, one close-up of the strip.
+                        </Typography>
+                    </Box>
+                </AccordionDetails>
             </Accordion>
 
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography fontWeight={600}>Recommended Test Kits</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="body2">
-                  Use SafeHome, TapScore, or WaterSafe kits for better results.
-                </Typography>
-              </AccordionDetails>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontWeight={600}>How to Fill the Form</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Box component="ol" sx={{ pl: 3, m: 0 }}>
+                        <Box component="li" sx={{ mb: 0.5 }}>
+                            <Typography variant="body2">
+                                <strong>Location</strong>: street address or landmark (e.g., “123 Main St” or “Saugatuck River – south bank”).
+                            </Typography>
+                        </Box>
+                        <Box component="li" sx={{ mb: 0.5 }}>
+                            <Typography variant="body2">
+                                <strong>Lead Level (ppb)</strong>: enter the number you read from the chart (parts per billion).
+                            </Typography>
+                        </Box>
+                        <Box component="li" sx={{ mb: 0.5 }}>
+                            <Typography variant="body2">
+                                <strong>Test Kit Used</strong>: kit brand/model (e.g., “TapScore Advanced Lead”).
+                            </Typography>
+                        </Box>
+                        <Box component="li" sx={{ mb: 0.5 }}>
+                            <Typography variant="body2">
+                                <strong>Date Tested</strong>: the day you ran the test.
+                            </Typography>
+                        </Box>
+                        <Box component="li">
+                            <Typography variant="body2">
+                                <strong>Upload Photo</strong>: include the strip and the color chart in one photo if possible.
+                            </Typography>
+                        </Box>
+                    </Box>
+                </AccordionDetails>
             </Accordion>
 
             <Accordion>
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography fontWeight={600}>Color Chart</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography variant="body2">
-                  Refer to your kit’s color chart to determine lead level.
-                </Typography>
-              </AccordionDetails>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontWeight={600}>Color Chart</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography variant="body2" sx={{ mb: 1.5 }}>
+                        Match your strip’s color to the closest block in the chart to determine the lead level.
+                        Record the corresponding value (in ppb) in the form.
+                    </Typography>
+
+                    {/* Color Chart Image */}
+                    <Box
+                        component="img"
+                        src={colorChartSrc}
+                        alt="Lead test color reference chart"
+                        sx={{
+                            width: "100%",
+                            height: "auto",
+                            borderRadius: 2,
+                            border: "1px solid",
+                            borderColor: "divider",
+                            boxShadow: 1,
+                            mb: 1.5,
+                        }}
+                    />
+
+                    <Typography variant="caption" color="text.secondary">
+                        Example reference chart. Use the chart from your specific kit if it differs.
+                    </Typography>
+                </AccordionDetails>
             </Accordion>
-          </Grid>
+
+            <Accordion>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <Typography fontWeight={600}>Recommended Test Kits</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography variant="body2">
+                        Use SafeHome, TapScore, or WaterSafe kits for reliable results. Follow the manufacturer’s timing and rinsing instructions exactly.
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+        </Grid>
         </Grid>
       </Box>
   );

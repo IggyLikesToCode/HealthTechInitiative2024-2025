@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hti24-25/public/assets/varify chart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hti24-25/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hti24-25/public/assets" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -99,6 +106,8 @@
       <workItem from="1761092889547" duration="1317000" />
       <workItem from="1761173197705" duration="65000" />
       <workItem from="1761182282025" duration="1398000" />
+      <workItem from="1761184423003" duration="322000" />
+      <workItem from="1761427954747" duration="3041000" />
     </task>
     <servers />
   </component>
