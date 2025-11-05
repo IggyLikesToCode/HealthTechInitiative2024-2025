@@ -1,5 +1,6 @@
 # Health Tech Initiative (2024-2025)
-Health Tech Initiative - Setting up the project locally
+A project made by Sahil and Iggy for the club Health Tech Initiative, focused on garnering crowdsourced data of lead contamination across the globe.
+Setting up the project locally:
 
 Local - 
 Step 1.
