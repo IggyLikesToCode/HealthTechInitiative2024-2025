@@ -105,7 +105,7 @@ const Report = () => {
 
               <Box display="flex" flexDirection="column" gap={2}>
                 <TextField
-                    label="Location"
+                    label="Address"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     fullWidth

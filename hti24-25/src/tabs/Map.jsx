@@ -5,7 +5,7 @@ import "leaflet.heat/dist/leaflet-heat.js";
 import { Box, Typography, Select, MenuItem, Paper } from "@mui/material";
 
 function Map() {
-    const [layerType, setLayerType] = useState("historical");
+    const [layerType, setLayerType] = useState("open");
     const [historicalData, setHistoricalData] = useState([]);
     const [openSourceData, setOpenSourceData] = useState([]);
     const [aiData, setAiData] = useState([]);
@@ -46,8 +46,8 @@ function Map() {
         if (mapRef.current) return;
 
         const map = L.map("map", { zoomControl: false }).setView(
-            [40.678, -96.944],
-            4
+            [41.1415, -73.3579],
+            12
         );
 
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
