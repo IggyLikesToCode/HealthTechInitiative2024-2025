@@ -118,7 +118,7 @@ const Report = () => {
                     fullWidth
                 />
                 <TextField
-                    label="Test Kit Used"
+                    label="Name and Test Kit Used"
                     value={testKit}
                     onChange={(e) => setTestKit(e.target.value)}
                     fullWidth
@@ -223,7 +223,7 @@ const Report = () => {
                         </Box>
                         <Box component="li" sx={{ mb: 0.5 }}>
                             <Typography variant="body2">
-                                <strong>Test Kit Used</strong>: kit brand/model (e.g., “TapScore Advanced Lead”).
+                                <strong>Name and Test Kit Used</strong>: kit brand/model (e.g., “TapScore Advanced Lead”).
                             </Typography>
                         </Box>
                         <Box component="li" sx={{ mb: 0.5 }}>
