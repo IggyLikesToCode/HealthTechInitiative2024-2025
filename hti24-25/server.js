@@ -15,7 +15,25 @@ const s3 = new AWS.S3({ region: "us-east-2" });
 
 
 
-const upload = multer({ limits: { fileSize: 10 * 1024 * 1024 } }); // 10 mb max
+const upload = multer({
+    limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB
+    fileFilter: (req, file, cb) => {
+        const allowedTypes = [
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+            "image/heic",
+            "image/heif",
+        ];
+
+        if (allowedTypes.includes(file.mimetype)) {
+            cb(null, true);
+        } else {
+            cb(new Error("Only JPEG, JPG, PNG, and HEIC files are allowed."));
+        }
+    },
+});
+
 const heicConvert = require("heic-convert");
 
 app.post("/api/upload", upload.single("image"), async (req, res) => {
