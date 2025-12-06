@@ -249,17 +249,14 @@ const Home = () => {
               color="text.secondary"
               sx={{ maxWidth: "600px", mb: 2, fontSize: { xs: "1rem", md: "1.25rem" } }}
             >
-              Empowering every community with data to uncover and eliminate lead
-              exposure risks.
+              We're a student run research organization started at Staples High School in Westport, CT. Health Tech Initiative was founded in 2024 to help students get involved in hands on community projects that leverage technology for social good. 
             </Typography>
             <Typography
               variant="h6"
               color="text.secondary"
               sx={{ maxWidth: "600px" }}
             >
-              We believe no child should grow up drinking contaminated water.
-              Our mission is to build the most comprehensive, accessible, and
-              transparent platform for lead reporting in the United States.
+              Lead Watch was created to better map the scope of the lead contamination crisis in the United States and help raise awareness through student advocacy. Through community testing, our open source database and outreach aims to help communities know what they're drinking.
             </Typography>
           </Grid>
         </Grid>
@@ -271,7 +268,7 @@ const Home = () => {
         </Typography>
         <Typography variant="h6" color="text.secondary" mb={4} sx={{ fontSize: { xs: "1rem", md: "1.25rem" } }}>
           Thank you to our amazing sponsors and partners who help keep Health
-          Tech Initiative running!
+          Tech Initiative running! If you'd like to reach out and support our work, please email us at healthtech.initiative.ct@gmail.com.
         </Typography>
 
           <Box
@@ -283,6 +280,7 @@ const Home = () => {
                   "&::-webkit-scrollbar": { display: "none" },
               }}
           >
+            <a href="https://shs.westportps.org/" target="_blank" rel="noopener noreferrer">
               <Avatar
                   alt="Staples High School"
                   src="/assets/stapleshighschool.png"
@@ -295,6 +293,24 @@ const Home = () => {
                       minHeight: "80px",
                   }}
               />
+              </a>
+              <a href="https://www.noahsystem.co/" target="_blank" rel="noopener noreferrer">
+              <Avatar
+                  alt="Noah System"
+                  src="/assets/noahsystems.png"
+                  
+                  sx={{
+                      width: "30vw",
+                      height: "30vw",
+                      maxWidth: "220px",
+                      maxHeight: "110px",
+                      minWidth: "80px",
+                      minHeight: "80px",
+                      borderRadius: 0,
+
+                  }}
+              />
+              </a>
 
           </Box>
       </Box>
