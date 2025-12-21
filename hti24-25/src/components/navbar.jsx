@@ -15,6 +15,7 @@ const navItems = [
     { label: "Report", path: "/report" },
     { label: "Test Kits", path: "/testkits" },
     { label: "Contact", path: "/contact" },
+    {label: "Updates", path: "/updates" },
 ];
 
 const Navbar = () => {

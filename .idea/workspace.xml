@@ -7,7 +7,8 @@
     <list default="true" id="662e0127-0b62-410a-84fb-39dace9375d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hti24-25/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/tabs/Report.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hti24-25/src/components/navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/hti24-25/src/components/navbar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <workItem from="1761182282025" duration="1398000" />
       <workItem from="1761184423003" duration="322000" />
       <workItem from="1761427954747" duration="3041000" />
-      <workItem from="1762181477676" duration="8344000" />
+      <workItem from="1762181477676" duration="15765000" />
     </task>
     <servers />
   </component>
