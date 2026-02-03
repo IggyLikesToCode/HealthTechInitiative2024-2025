@@ -195,7 +195,8 @@ const Report = () => {
                                 variant="contained"
                                 onClick={handleSubmit}
                                 fullWidth
-                                sx={{ py: 1, fontWeight: 600 }}
+
+                                sx={{ py: 1, fontWeight: 600, color: "white" }}
                             >
                                 Submit Report
                             </Button>

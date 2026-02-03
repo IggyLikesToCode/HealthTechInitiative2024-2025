@@ -13,7 +13,7 @@ const navItems = [
     { label: "Home", path: "/" },
     { label: "Data", path: "/map" },
     { label: "Report", path: "/report" },
-    { label: "Test Kits", path: "/testkits" },
+    { label: "Chapters", path: "/chapters" },
     { label: "Contact", path: "/contact" },
     //{label: "Updates", path: "/updates" },
 ];
