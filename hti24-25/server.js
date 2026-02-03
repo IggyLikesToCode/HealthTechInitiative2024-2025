@@ -126,7 +126,7 @@ app.post("/api/report-lead", async (req, res) => {
 
   try {
     const sql = `
-            INSERT INTO data_for_lead_new_crowdsourced 
+            INSERT INTO data_for_lead_new_crowdsourced
             (location_name, latitude, longitude, level, date_tested, reported_by, test_kit_used)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         `;
@@ -147,6 +147,60 @@ app.post("/api/report-lead", async (req, res) => {
   } catch (err) {
     console.error("Error inserting lead report:", err.message);
     res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post("/send-email", async (req, res) => {
+  const { name, email, school, location, grade, reason} = req.body;
+
+  if (!name || !email || !school || !location || !grade || !reason) {
+    return res.status(400).json({
+      success: false,
+      message: "Missing required fields"
+    });
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // Email content
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: "leadwatchhti@gmail.com",
+      subject: `New Chapter Application - ${school}`,
+      html: `
+        <h2>New Chapter Application Received</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>School:</strong> ${school}</p>
+        <p><strong>Location:</strong> ${location}</p>
+        <p><strong>Grade Level:</strong> ${grade}</p>
+        <p><strong>Why they want to start a chapter:</strong></p>
+        <p>${reason}</p>
+        <br>
+        <p><em>This application was submitted via the Health Tech Initiative website.</em></p>
+      `,
+    };
+
+    // Send email
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({
+      success: true,
+      message: "Application submitted successfully"
+    });
+  } catch (err) {
+    console.error("Error sending email:", err);
+    res.status(500).json({
+      success: false,
+      message: "Failed to send application email"
+    });
   }
 });
 
