@@ -150,7 +150,7 @@ app.post("/api/report-lead", async (req, res) => {
   }
 });
 
-app.post("/send-email", async (req, res) => {
+app.post("/api/send-email", async (req, res) => {
   const { name, email, school, location, grade, reason} = req.body;
 
   if (!name || !email || !school || !location || !grade || !reason) {
